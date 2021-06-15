@@ -54,7 +54,7 @@ $mobile-screen: 375px
       margin: 0 10%
       border-radius: 8px
       overflow: hidden
-      box-shadow: 1px 1px 16px 1px rgba(255,255,255,.1)
+      box-shadow: 1px 1px 16px 2px rgba(255,255,255,.1)
       @media screen and (max-width: $mobile-screen)
         flex-direction: column-reverse
         margin: 0 5%
