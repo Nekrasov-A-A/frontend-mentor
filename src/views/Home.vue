@@ -5,6 +5,7 @@
     <ProfileCardComponent />
     <Project4 />
     <Project5 />
+    <Project6 />
   </div>
 </template>
 
@@ -14,6 +15,7 @@ import ProjectSecond from "../components/3-columnPreviewCardComponent/ProjectSec
 import ProfileCardComponent from "../components/ProfileCardComponent/ProfileCardComponent.vue";
 import Project4 from "../components/FAQAccordionCard/Project4.vue";
 import Project5 from "../components/SocialProofSectionMaster/Project5.vue";
+import Project6 from "../components/ArticlePreviewComponentMaster/Project6.vue";
 
 export default {
   name: "Home",
@@ -23,6 +25,7 @@ export default {
     ProfileCardComponent,
     Project4,
     Project5,
+    Project6,
   },
 };
 </script>
