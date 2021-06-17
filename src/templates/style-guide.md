@@ -11,21 +11,33 @@ The designs were created to the following widths:
 
 ### Primary
 
-- Cyan: hsl(179, 62%, 43%)
-- Bright Yellow: hsl(71, 73%, 54%)
+- Blue: hsl(223, 87%, 63%)
+
+### Secondary
+
+- Pale Blue: hsl(223, 100%, 88%)
+- Light Red: hsl(354, 100%, 66%)
 
 ### Neutral
 
-- Light Gray: hsl(204, 43%, 93%)
-- Grayish Blue: hsl(218, 22%, 67%)
+- Gray: hsl(0, 0%, 59%)
+- Very Dark Blue: hsl(209, 33%, 12%)
 
 ## Typography
 
 ### Body Copy
 
-- Font size: 16px
+- Font size: 20px
 
-### Font
+### Fonts
 
-- Family: [Karla](https://fonts.google.com/specimen/Karla)
-- Weights: 400, 700
+- Family: [Libre Franklin](https://fonts.google.com/specimen/Libre+Franklin)
+- Weights: 300, 600, 700
+
+## Icons
+
+For the social icons, you can use a font icon library. Some suggestions can be found below:
+
+- [Font Awesome](https://fontawesome.com)
+- [IcoMoon](https://icomoon.io)
+- [Ionicons](https://ionicons.com)
