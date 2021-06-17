@@ -9,6 +9,7 @@
     <Project7 />
     <Project8 />
     <Project9 />
+    <Project10 />
   </div>
 </template>
 
@@ -22,6 +23,7 @@ import Project6 from "../components/ArticlePreviewComponentMaster/Project6.vue";
 import Project7 from "../components/FourCardFeatureSectionMaster/Project7.vue";
 import Project8 from "../components/BaseApparelComingSoonMaster/Project8.vue";
 import Project9 from "../components/IntroComponentWithSignupFormMaster/Project9.vue";
+import Project10 from "../components/SinglePriceGridComponentMaster/Project10.vue";
 
 export default {
   name: "Home",
@@ -35,6 +37,7 @@ export default {
     Project7,
     Project8,
     Project9,
+    Project10,
   },
 };
 </script>
