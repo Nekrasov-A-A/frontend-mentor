@@ -8,6 +8,7 @@
     <Project6 />
     <Project7 />
     <Project8 />
+    <Project9 />
   </div>
 </template>
 
@@ -20,6 +21,7 @@ import Project5 from "../components/SocialProofSectionMaster/Project5.vue";
 import Project6 from "../components/ArticlePreviewComponentMaster/Project6.vue";
 import Project7 from "../components/FourCardFeatureSectionMaster/Project7.vue";
 import Project8 from "../components/BaseApparelComingSoonMaster/Project8.vue";
+import Project9 from "../components/IntroComponentWithSignupFormMaster/Project9.vue";
 
 export default {
   name: "Home",
@@ -32,6 +34,7 @@ export default {
     Project6,
     Project7,
     Project8,
+    Project9,
   },
 };
 </script>
