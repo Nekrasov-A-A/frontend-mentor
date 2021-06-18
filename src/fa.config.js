@@ -5,22 +5,20 @@ import {
   faFacebookF,
   faTwitter,
   faInstagram,
+  faPinterestSquare,
+  faFacebookSquare,
 } from "@fortawesome/free-brands-svg-icons";
 
-import { faUser, faBuilding } from "@fortawesome/free-solid-svg-icons";
-import {
-  faUserCircle,
-  faCheckCircle,
-} from "@fortawesome/free-regular-svg-icons";
+import { faBars, faLongArrowAltDown } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
-  faUser,
-  faBuilding,
-  faUserCircle,
-  faCheckCircle,
   faFacebookF,
   faTwitter,
-  faInstagram
+  faInstagram,
+  faBars,
+  faLongArrowAltDown,
+  faPinterestSquare,
+  faFacebookSquare
 );
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);

@@ -1,9 +1,5 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
     <router-view />
   </div>
 </template>
@@ -13,4 +9,7 @@ import "normalize.css";
 export default {};
 </script>
 
-<style></style>
+<style lang="sass" scoped>
+div
+  width: 100%
+</style>
