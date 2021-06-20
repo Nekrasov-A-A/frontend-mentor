@@ -1,8 +1,6 @@
 <template>
   <div class="wrapper">
     <header class="header">
-      {{ windowWidth }}
-      {{ windowHeight }}
       <div class="header__tools">
         <img src="./images/logo.svg" alt="logo" />
         <font-awesome-icon
@@ -197,7 +195,7 @@ $ipad-pro: 1025px
         @media screen and (max-width: $ipad)
             padding: 10% 5%
         @media screen and (max-width: $mobile)
-            min-height: 100vh
+            min-height: 90vh
             background: url('./images/bg-pattern-intro.svg') 30% 30% no-repeat, linear-gradient(90deg, hsl(13, 100%, 72%), hsl(353, 100%, 62%))
             background-size: 300% 200%
         & .header__tools
