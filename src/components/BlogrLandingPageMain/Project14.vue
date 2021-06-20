@@ -215,6 +215,7 @@ $ipad-pro: 1025px
                 cursor: pointer
             & .bars-icon
                 display: none
+                -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
                 @media screen and (max-width: $ipad)
                     display: flex
                     width: 40px
@@ -356,6 +357,9 @@ $ipad-pro: 1025px
                     cursor: pointer
                     font-weight: 600
                     transition: all .3s
+                    -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+                    &:active
+                      outline: none
                 & button:nth-child(1)
                     background-color: transparent
                     color: hsla(0, 0%, 100%,.7)
