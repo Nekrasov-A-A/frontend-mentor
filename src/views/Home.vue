@@ -1,5 +1,6 @@
 <template>
   <div>
+    <router-link to="/junior/blogr-landing-page">Project14</router-link>
     <StatsPreviewCardComponent />
     <ProjectSecond />
     <ProfileCardComponent />

@@ -95,6 +95,34 @@
         </div>
       </div>
     </header>
+    <section class="about">
+      <h1>Designed for the future</h1>
+      <div class="info">
+        <div class="item">
+          <h1>Introducing an extensible editor</h1>
+          <p>
+            Blogr features an exceedingly intuitive interface which lets you
+            focus on one thing: creating content. The editor supports management
+            of multiple blogs and allows easy manipulation of embeds such as
+            images, videos, and Markdown. Extensibility with plugins and themes
+            provide easy ways to add functionality or change the looks of a
+            blog.
+          </p>
+        </div>
+        <div class="item">
+          <h1>Robust content management</h1>
+          <p>
+            Flexible content management enables users to easily move through
+            posts. Increase the usability of your blog by adding customized
+            categories, sections, format, or flow. With this functionality,
+            you're in full control.
+          </p>
+        </div>
+      </div>
+      <div class="image">
+        <img alt="image" :src="require(`${editorViewChanger}`)" />
+      </div>
+    </section>
   </div>
 </template>
 
@@ -123,6 +151,16 @@ export default {
       this.isShowOptionsProduct = false;
     },
   },
+  computed: {
+    isMobile: function() {
+      return this.windowWidth > 415 ? false : true;
+    },
+    editorViewChanger: function() {
+      return this.isMobile
+        ? "./images/illustration-editor-mobile.svg"
+        : "./images/illustration-editor-desktop.svg";
+    },
+  },
 };
 </script>
 
@@ -132,7 +170,7 @@ export default {
 
 $ipad: 900px
 $mobile: 415px
-
+$ipad-pro: 1025px
 
 *
     margin: 0
@@ -142,6 +180,7 @@ $mobile: 415px
 
 .wrapper
     display: flex
+    flex-wrap: wrap
     & .header
         min-height: 70vh
         background: url('./images/bg-pattern-intro.svg') 30% 50% no-repeat, linear-gradient(90deg, hsl(13, 100%, 72%), hsl(353, 100%, 62%))
@@ -157,6 +196,8 @@ $mobile: 415px
             padding: 10% 5%
         @media screen and (max-width: $mobile)
             min-height: 100vh
+            background: url('./images/bg-pattern-intro.svg') 30% 30% no-repeat, linear-gradient(90deg, hsl(13, 100%, 72%), hsl(353, 100%, 62%))
+            background-size: 300% 200%
         & .header__tools
             display: flex
             align-items: center
@@ -384,4 +425,76 @@ $mobile: 415px
                     &:hover
                         background-color: hsl(0, 0%, 100%)
                         color: hsl(356, 100%, 66%)
+    & .about
+      display: flex
+      flex-wrap: wrap
+      max-height: 100vh
+      width: 100%
+      align-items: center
+      justify-content: center
+      overflow: hidden
+      position: relative
+      @media screen and (max-width: $ipad-pro)
+        max-height: none
+        min-height: 100vh
+        height: 100%
+      @media screen and (max-width: $mobile)
+        max-height: none
+        height: 100%
+        padding: 100px 5%
+      & > h1
+        width: 100%
+        position: absolute
+        top: 15%
+        left: 0
+        text-align: center
+        color: hsl(208, 49%, 24%)
+        @media screen and (max-width: $ipad-pro)
+          top: 10%
+        @media screen and (max-width: $mobile)
+          position: static
+          order: -2
+          margin-bottom: 40px
+          font-size: 1.7em
+      & .info
+        width: 42%
+        margin-left: 8%
+        margin-top: 1.5%
+        @media screen and (max-width: $ipad-pro)
+          width: 35%
+          margin-left: 5%
+          padding: 15% 0
+          margin-top: 0%
+        @media screen and (max-width: $mobile)
+          width: 100%
+          margin: 0
+          text-align: center
+        & .item:nth-child(1)
+          margin-bottom: 40px
+        & .item
+          padding-right: 5%
+          & h1
+            color: hsl(208, 49%, 24%)
+            font-size: 1.6em
+            margin-bottom: 20px
+            @media screen and (max-width: $mobile)
+              font-size: 1.4em
+          & p
+            color: hsla(208, 49%, 24%,.6)
+            font-weight: 600
+            line-height: 26px
+      & .image
+        width: 50%
+        height: 90%
+        transform: translateX(27%)
+        @media screen and (max-width: $ipad-pro)
+          width: 60%
+        @media screen and (max-width: $mobile)
+          width: 100%
+          order: -1
+          transform: translateX(0%)
+          margin-bottom: 40px
+        & img
+          height: 100%
+          width: 100%
 </style>
