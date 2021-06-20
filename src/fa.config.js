@@ -9,7 +9,12 @@ import {
   faFacebookSquare,
 } from "@fortawesome/free-brands-svg-icons";
 
-import { faBars, faLongArrowAltDown } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBars,
+  faLongArrowAltDown,
+  faAngleDown,
+  faTimes,
+} from "@fortawesome/free-solid-svg-icons";
 
 library.add(
   faFacebookF,
@@ -18,7 +23,9 @@ library.add(
   faBars,
   faLongArrowAltDown,
   faPinterestSquare,
-  faFacebookSquare
+  faFacebookSquare,
+  faAngleDown,
+  faTimes
 );
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);

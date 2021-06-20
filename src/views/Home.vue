@@ -30,6 +30,7 @@ import Project9 from "../components/IntroComponentWithSignupFormMaster/Project9.
 import Project10 from "../components/SinglePriceGridComponentMaster/Project10.vue";
 import Project11 from "../components/PingComingSoonPageMaster/Project11.vue";
 import Project12 from "../components/HuddleLandingPageWithSingleIntroductorySectionMaster/Project12.vue";
+
 import Project13 from "../components/SunnysideAgencyLandingPageMain/Project13.vue";
 
 export default {
