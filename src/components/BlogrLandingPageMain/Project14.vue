@@ -1,6 +1,8 @@
 <template>
   <div class="wrapper">
     <header class="header">
+      {{ windowWidth }}
+      {{ windowHeight }}
       <div class="header__tools">
         <img src="./images/logo.svg" alt="logo" />
         <font-awesome-icon
