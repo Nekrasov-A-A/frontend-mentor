@@ -1,6 +1,10 @@
 <template>
   <div>
     <router-link to="/junior/blogr-landing-page">Project14</router-link>
+    <router-link to="/junior/crowdfunding-product-page-main"
+      >Project15</router-link
+    >
+
     <StatsPreviewCardComponent />
     <ProjectSecond />
     <ProfileCardComponent />

@@ -14,6 +14,7 @@ import {
   faLongArrowAltDown,
   faAngleDown,
   faTimes,
+  faBookmark,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -25,7 +26,8 @@ library.add(
   faPinterestSquare,
   faFacebookSquare,
   faAngleDown,
-  faTimes
+  faTimes,
+  faBookmark
 );
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);

@@ -19,6 +19,10 @@ const routes = [
         path: "blogr-landing-page",
         component: () => import("../views/BlogrLandingPage.vue"),
       },
+      {
+        path: "crowdfunding-product-page-main",
+        component: () => import("../views/CrowdfundingProductPageMain.vue"),
+      },
     ],
   },
 ];
