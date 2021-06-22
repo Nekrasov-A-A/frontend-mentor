@@ -3,11 +3,14 @@
     <PopUpSelected
       v-if="isShowPopUp"
       @closePopUp="closePopUp"
-      @openGratitudePopUp='openGratitudePopUp'
+      @openGratitudePopUp="openGratitudePopUp"
       :isCheckedAverage="isCheckedAverage"
       :isCheckedVip="isCheckedVip"
     />
-    <GratitudePopUp v-if="isSubscribe" @closeGratitudePopUp='closeGratitudePopUp' />
+    <GratitudePopUp
+      v-if="isSubscribe"
+      @closeGratitudePopUp="closeGratitudePopUp"
+    />
     <header class="header">
       <nav class="nav">
         <div class="image">
@@ -136,7 +139,7 @@
 
 <script>
 import PopUpSelected from "./PopUpSelected.vue";
-import GratitudePopUp from './GratitudePopUp.vue'
+import GratitudePopUp from "./GratitudePopUp.vue";
 export default {
   data: () => ({
     isOpen: false,
@@ -146,7 +149,7 @@ export default {
     isShowPopUp: false,
     isCheckedAverage: false,
     isCheckedVip: false,
-    isSubscribe: false
+    isSubscribe: false,
   }),
   components: { PopUpSelected, GratitudePopUp },
   computed: {
@@ -161,9 +164,9 @@ export default {
       this.isActiveButton = this.isActiveButton ? false : true;
     },
     closePopUp: function() {
-        this.isShowPopUp = false;
-        this.isCheckedAverage = false;
-        this.isCheckedVip = false;
+      this.isShowPopUp = false;
+      this.isCheckedAverage = false;
+      this.isCheckedVip = false;
     },
     openPopUp: function(value) {
       switch (value) {
@@ -177,12 +180,12 @@ export default {
       this.isShowPopUp = true;
     },
     closeGratitudePopUp: function() {
-      this.isSubscribe = false
+      this.isSubscribe = false;
     },
     openGratitudePopUp: function() {
-      this.isSubscribe = true
-      this.closePopUp()
-    }
+      this.isSubscribe = true;
+      this.closePopUp();
+    },
   },
 };
 </script>
@@ -311,6 +314,10 @@ $ipad-pro: 1024px
         transform: translateY(-15vh)
         @media screen and (max-width: $mobile)
           padding: 0 5%
+        @media screen and (max-width: $ipad)
+          padding: 0 10%
+        @media screen and (max-width: $ipad-pro)
+          padding: 0 10%
         & .intro
             display: flex
             width: 100%
@@ -369,7 +376,7 @@ $ipad-pro: 1024px
                     &:focus
                       outline: none
                     @media screen and (max-width: $mobile)
-                      padding: 15px 
+                      padding: 15px
                 & button.btn
                     padding: 20px 40px 20px 90px
                     border-radius: 50px
@@ -426,6 +433,8 @@ $ipad-pro: 1024px
                 flex-direction: column
                 align-items: center
                 text-align: center
+
+
               & li:nth-child(3)
                 @media screen and (max-width: $mobile)
                   margin-bottom: 0
@@ -439,6 +448,8 @@ $ipad-pro: 1024px
                   top: 0
                   right: 25%
                   background-color: hsla(0, 0%, 0%,.3)
+                  @media screen and (max-width: $ipad)
+                    right: -6%
                   @media screen and (max-width: $mobile)
                     width: 25%
                     height: 1px
@@ -452,6 +463,8 @@ $ipad-pro: 1024px
                   top: 0
                   left: -25%
                   background-color: hsla(0, 0%, 0%,.3)
+                  @media screen and (max-width: $ipad)
+                    left: 6.5%
                   @media screen and (max-width: $mobile)
                     width: 25%
                     height: 1px
@@ -463,6 +476,10 @@ $ipad-pro: 1024px
                 @media screen and (max-width: $mobile)
                   width: 100%
                   margin-bottom: 40px
+                @media screen and (max-width: $ipad)
+                  display: flex
+                  flex-direction: column
+                  align-items: center
                 & h1
                   color: hsl(0, 0%, 0%)
                   margin-bottom: 5px
@@ -559,6 +576,8 @@ $ipad-pro: 1024px
                 font-weight: 700
                 cursor: pointer
                 width: 25%
+                @media screen and (max-width: $ipad)
+                  width: 40%
                 @media screen and (max-width: $mobile)
                   width: 60%
                 &:active, &:focus

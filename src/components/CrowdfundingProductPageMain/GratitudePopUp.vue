@@ -1,24 +1,28 @@
 <template>
-    <div class="gratitude__wrapper" @click.self="closeGratitudePopUp">
-        <div class="gratitude__content">
-            <div class="gratitude__content__icon-wrapper">
-                <font-awesome-icon icon='check' class="gratitude__content__icon"/>
-            </div>
-            <h1>Thanks for your support!</h1>
-            <p>Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser worldwide. You will get an email once our campaing is completed.</p>
-            <button @click="closeGratitudePopUp">Got it!</button>
-        </div>
+  <div class="gratitude__wrapper" @click.self="closeGratitudePopUp">
+    <div class="gratitude__content">
+      <div class="gratitude__content__icon-wrapper">
+        <font-awesome-icon icon="check" class="gratitude__content__icon" />
+      </div>
+      <h1>Thanks for your support!</h1>
+      <p>
+        Your pledge brings us one step closer to sharing Mastercraft Bamboo
+        Monitor Riser worldwide. You will get an email once our campaing is
+        completed.
+      </p>
+      <button @click="closeGratitudePopUp">Got it!</button>
     </div>
+  </div>
 </template>
 
 <script>
 export default {
-    methods: {
-        closeGratitudePopUp: function() {
-            this.$emit('closeGratitudePopUp')
-        },
-    }
-}
+  methods: {
+    closeGratitudePopUp: function() {
+      this.$emit("closeGratitudePopUp");
+    },
+  },
+};
 </script>
 
 <style lang="sass" scoped>
@@ -57,7 +61,10 @@ $ipad-pro: 1024px
         @media screen and (max-width: $mobile)
             width: 90%
             padding: 40px 5%
-    
+        @media screen and (max-width: $ipad)
+            width: 50%
+            padding: 40px 5%
+
         .gratitude__content__icon-wrapper
             padding: 50px
             width: 0
@@ -72,7 +79,7 @@ $ipad-pro: 1024px
                 width: 40px
                 height: 40px
                 color: #fff
-        > h1 
+        > h1
             width: 100%
             display: flex
             justify-content: center
@@ -80,8 +87,8 @@ $ipad-pro: 1024px
             text-align: center
             @media screen and (max-width: $mobile)
                 font-size: 1.5em
-                
-        > p 
+
+        > p
             line-height: 28px
             text-align: center
             margin-bottom: 30px
@@ -95,9 +102,9 @@ $ipad-pro: 1024px
             color: hsl(0,0%,100%)
             font-weight: 500
             cursor: pointer
-            &:hover 
+            &:hover
                 background-color: hsl(176, 72%, 28%)
-            &:active, &:focus 
+            &:active, &:focus
                 outline: none
             &:active
                 transform: scale(0.97)

@@ -16,13 +16,14 @@
           <h3 :class="{ selected: isCheckedBasic }" @click="isChecked(0)">
             Pledge with no reward <span></span>
           </h3>
-          <h2 :style="{ visibility: 'hidden' }">101 <span>left</span></h2>
+
+          <p>
+            Choose to support us without a reward if you simply believe in our
+            project. As a backer, you will be signed up to receive product
+            updates via email.
+          </p>
         </div>
-        <p>
-          Choose to support us without a reward if you simply believe in our
-          project. As a backer, you will be signed up to receive product updates
-          via email.
-        </p>
+
         <div class="card__pledge basic" v-if="isCheckedBasic">
           <div class="card__pledge__tools ">
             <button @click="openGratitudePopUp">Continue</button>
@@ -35,12 +36,13 @@
             Bamboo Stand <span>Pledge $25 or more</span>
           </h3>
           <h2>101 <span>left</span></h2>
+          <p>
+            You get an ergonomic stand made of natural bamboo. You've helped us
+            launch our promotional campaign, and you'll be added to a special
+            Backer member list.
+          </p>
         </div>
-        <p>
-          You get an ergonomic stand made of natural bamboo. You've helped us
-          launch our promotional campaign, and you'll be added to a special
-          Backer member list.
-        </p>
+
         <div class="card__pledge" v-if="isCheckedAverage">
           <p>Enter your pledge</p>
           <div class="card__pledge__tools">
@@ -55,11 +57,13 @@
             Black Edition Stand <span>Pledge $75 or more</span>
           </h3>
           <h2>64 <span>left</span></h2>
+          <p>
+            You get a Black Special Edition computer stand and a personal thank
+            you. You'll be added to our Backer member list. Shipping is
+            included.
+          </p>
         </div>
-        <p>
-          You get a Black Special Edition computer stand and a personal thank
-          you. You'll be added to our Backer member list. Shipping is included.
-        </p>
+
         <div class="card__pledge" v-if="isCheckedVip">
           <p>Enter your pledge</p>
           <div class="card__pledge__tools">
@@ -72,12 +76,12 @@
         <div class="card__header">
           <h3>Mahogany Special Edition<span>Pledge $200 or more</span></h3>
           <h2>0 <span>left</span></h2>
+          <p>
+            You get two Special Edition Mahogany stands, a Backer T-Shirt, and a
+            personal thank you. You'll be added to our Backer member list.
+            Shipping is included.
+          </p>
         </div>
-        <p>
-          You get two Special Edition Mahogany stands, a Backer T-Shirt, and a
-          personal thank you. You'll be added to our Backer member list.
-          Shipping is included.
-        </p>
       </div>
     </div>
   </div>
@@ -115,8 +119,8 @@ export default {
       this.$emit("closePopUp");
     },
     openGratitudePopUp: function() {
-            this.$emit('openGratitudePopUp')
-        }
+      this.$emit("openGratitudePopUp");
+    },
   },
 };
 </script>
@@ -161,6 +165,12 @@ $ipad-pro: 1024px
         @media screen and (max-width: $mobile)
           width: 90%
           padding: 40px 5%
+        @media screen and (max-width: $ipad)
+          width: 80%
+          padding: 40px 5%
+        @media screen and (max-width: $ipad-pro)
+          width: 80%
+          padding: 40px 5%
         .content__icon
             position: absolute
             top: 40px
@@ -172,7 +182,7 @@ $ipad-pro: 1024px
             cursor: pointer
             @media screen and (max-width: $mobile)
               right: 5%
-              
+
 
         > h1
             margin-bottom: 20px
@@ -210,25 +220,29 @@ $ipad-pro: 1024px
                 border: 1px solid hsl(176, 50%, 47%)
             .card__header
                 display: flex
+                flex-wrap: wrap
                 justify-content: space-between
                 width: 100%
-                height: 30px
-                align-items: center
                 position: relative
                 margin-bottom: 15px
                 @media screen and (max-width: $mobile)
-                  height: 46px
+
+
                 > h3
                     cursor: pointer
                     position: relative
                     display: flex
                     align-items: center
                     user-select: none
+                    margin-bottom: 20px
+                    height: 32px
+
                     @media screen and (max-width: $mobile)
                       flex-wrap: wrap
-                      margin-left: 52px
                       -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
-                      height: 100%
+                      min-height: 52px
+                      margin-left: 52px
+
                     &::before
                         content: ''
                         width: 30px
@@ -239,10 +253,14 @@ $ipad-pro: 1024px
                         margin-right: 20px
                         display: flex
                         justify-content: center
+                        align-items: center
+                        box-sizing: border-box
+                        padding-bottom: 9.5px
                         @media screen and (max-width: $mobile)
                           position: absolute
-                          top: 6px
+                          top: 10px
                           left: -50px
+
                     &:hover
                         color: hsl(176, 50%, 47%)
 
@@ -256,9 +274,7 @@ $ipad-pro: 1024px
                             content: '●'
                             font-size: 44px
                             color: hsl(176, 50%, 47%)
-                            text-align: center
-                            line-height: 20px
-
+                            line-height: 0px
                     > span
                         margin-left: 20px
                         color: hsla(176, 50%, 47%,.7)
@@ -268,20 +284,25 @@ $ipad-pro: 1024px
                           margin-top: 5px
                 > h2
                     cursor: default
+                    height: 32px
+                    font-size: 18.72px
+                    display: flex
+                    align-items: center
                     @media screen and (max-width: $mobile)
-                      display: none
+                      order: 2
+                      margin-top: 20px
                     > span
                         margin-left: 10px
                         font-size: 1rem
                         color: hsl(0, 0%, 48%)
                         font-weight: 500
-            > p
-                margin-left: 52px
-                line-height: 28px
-                color: hsla(0, 0%, 48%,.7)
-                font-weight: 500
-                @media screen and (max-width: $mobile)
-                  margin-left: 0
+                > p
+                  margin-left: 52px
+                  line-height: 28px
+                  color: hsla(0, 0%, 48%,.7)
+                  font-weight: 500
+                  @media screen and (max-width: $mobile)
+                    margin-left: 0
 
             .card__pledge
                 display: flex
