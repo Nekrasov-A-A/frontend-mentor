@@ -25,7 +25,7 @@
         </p>
         <div class="card__pledge basic" v-if="isCheckedBasic">
           <div class="card__pledge__tools ">
-            <button>Continue</button>
+            <button @click="openGratitudePopUp">Continue</button>
           </div>
         </div>
       </div>
@@ -45,7 +45,7 @@
           <p>Enter your pledge</p>
           <div class="card__pledge__tools">
             <label><input type="number" value="25"/></label>
-            <button>Continue</button>
+            <button @click="openGratitudePopUp">Continue</button>
           </div>
         </div>
       </div>
@@ -64,7 +64,7 @@
           <p>Enter your pledge</p>
           <div class="card__pledge__tools">
             <label><input type="number" value="75"/></label>
-            <button>Continue</button>
+            <button @click="openGratitudePopUp">Continue</button>
           </div>
         </div>
       </div>
@@ -114,15 +114,24 @@ export default {
     closePopUp: function() {
       this.$emit("closePopUp");
     },
+    openGratitudePopUp: function() {
+            this.$emit('openGratitudePopUp')
+        }
   },
 };
 </script>
 
 <style lang="sass" scoped>
+
+$ipad: 768px
+$mobile: 415px
+$ipad-pro: 1024px
+
 *
     box-sizing: border-box
     margin: 0
     padding: 0
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
 
 .pop-up__wrapper
     min-height: 100vh
@@ -149,7 +158,9 @@ export default {
         &::-webkit-scrollbar
           width: 0
           height: 0
-
+        @media screen and (max-width: $mobile)
+          width: 90%
+          padding: 40px 5%
         .content__icon
             position: absolute
             top: 40px
@@ -159,13 +170,20 @@ export default {
             color: hsl(0, 0%, 48%)
             -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
             cursor: pointer
+            @media screen and (max-width: $mobile)
+              right: 5%
+              
 
         > h1
             margin-bottom: 20px
+            @media screen and (max-width: $mobile)
+              font-size: 1.7em
         > p
             margin-bottom: 30px
             font-weight: 500
             color: hsl(0, 0%, 48%)
+            @media screen and (max-width: $mobile)
+              line-height: 28px
 
 
         .content__card
@@ -175,6 +193,7 @@ export default {
             display: flex
             flex-direction: column
             margin-bottom: 20px
+            overflow: hidden
             &.content-blur
               opacity: 0.5
               user-select: none
@@ -197,13 +216,19 @@ export default {
                 align-items: center
                 position: relative
                 margin-bottom: 15px
-
+                @media screen and (max-width: $mobile)
+                  height: 46px
                 > h3
                     cursor: pointer
                     position: relative
                     display: flex
                     align-items: center
                     user-select: none
+                    @media screen and (max-width: $mobile)
+                      flex-wrap: wrap
+                      margin-left: 52px
+                      -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+                      height: 100%
                     &::before
                         content: ''
                         width: 30px
@@ -214,6 +239,10 @@ export default {
                         margin-right: 20px
                         display: flex
                         justify-content: center
+                        @media screen and (max-width: $mobile)
+                          position: absolute
+                          top: 6px
+                          left: -50px
                     &:hover
                         color: hsl(176, 50%, 47%)
 
@@ -234,8 +263,13 @@ export default {
                         margin-left: 20px
                         color: hsla(176, 50%, 47%,.7)
                         font-weight: 500
+                        @media screen and (max-width: $mobile)
+                          margin-left: 0
+                          margin-top: 5px
                 > h2
                     cursor: default
+                    @media screen and (max-width: $mobile)
+                      display: none
                     > span
                         margin-left: 10px
                         font-size: 1rem
@@ -246,6 +280,8 @@ export default {
                 line-height: 28px
                 color: hsla(0, 0%, 48%,.7)
                 font-weight: 500
+                @media screen and (max-width: $mobile)
+                  margin-left: 0
 
             .card__pledge
                 display: flex
@@ -254,19 +290,26 @@ export default {
                 padding: 30px 0 0 0
                 margin-top: 20px
                 position: relative
+                @media screen and (max-width: $mobile)
+                  flex-wrap: wrap
+                  justify-content: center
                 &.basic
                   justify-content: flex-end
+                  @media screen and (max-width: $mobile)
+                    justify-content: center
                 &::before
                     content: ''
-                    width: 105%
+                    width: 150%
                     height: 1px
                     background-color: hsla(0, 0%, 0%,.3)
                     position: absolute
                     top: 0
-                    left: -2.5%
+                    left: -10%
                 > p
                     color: hsla(0, 0%, 48%,.7)
                     font-weight: 500
+                    @media screen and (max-width: $mobile)
+                      margin-bottom: 20px
                 .card__pledge__tools
                   & > label
                       position: relative

@@ -15,6 +15,7 @@ import {
   faAngleDown,
   faTimes,
   faBookmark,
+  faCheck,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -27,7 +28,8 @@ library.add(
   faFacebookSquare,
   faAngleDown,
   faTimes,
-  faBookmark
+  faBookmark,
+  faCheck,
 );
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);

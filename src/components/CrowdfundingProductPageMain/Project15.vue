@@ -3,9 +3,11 @@
     <PopUpSelected
       v-if="isShowPopUp"
       @closePopUp="closePopUp"
+      @openGratitudePopUp='openGratitudePopUp'
       :isCheckedAverage="isCheckedAverage"
       :isCheckedVip="isCheckedVip"
     />
+    <GratitudePopUp v-if="isSubscribe" @closeGratitudePopUp='closeGratitudePopUp' />
     <header class="header">
       <nav class="nav">
         <div class="image">
@@ -134,6 +136,7 @@
 
 <script>
 import PopUpSelected from "./PopUpSelected.vue";
+import GratitudePopUp from './GratitudePopUp.vue'
 export default {
   data: () => ({
     isOpen: false,
@@ -143,8 +146,9 @@ export default {
     isShowPopUp: false,
     isCheckedAverage: false,
     isCheckedVip: false,
+    isSubscribe: false
   }),
-  components: { PopUpSelected },
+  components: { PopUpSelected, GratitudePopUp },
   computed: {
     isMobile: function() {
       return this.windowWidth > 415 ? false : true;
@@ -157,9 +161,9 @@ export default {
       this.isActiveButton = this.isActiveButton ? false : true;
     },
     closePopUp: function() {
-      this.isShowPopUp = false;
-      this.isCheckedAverage = false;
-      this.isCheckedVip = false;
+        this.isShowPopUp = false;
+        this.isCheckedAverage = false;
+        this.isCheckedVip = false;
     },
     openPopUp: function(value) {
       switch (value) {
@@ -172,6 +176,13 @@ export default {
       }
       this.isShowPopUp = true;
     },
+    closeGratitudePopUp: function() {
+      this.isSubscribe = false
+    },
+    openGratitudePopUp: function() {
+      this.isSubscribe = true
+      this.closePopUp()
+    }
   },
 };
 </script>
