@@ -241,12 +241,14 @@ $ipad-pro: 1024px
                     display: flex
                     flex-direction: column
                     position: absolute
+                    z-index: 10
                     top: 200%
                     left: 0
                     margin: 0
                     width: 100%
                     background-color: hsl(0, 0%, 100%)
                     border-radius: 8px
+                    box-shadow: 1px 1px 2px 4px rgba(0,0,0,.1)
                     & li:nth-child(3)
                         &::after
                             content: ''
@@ -366,6 +368,8 @@ $ipad-pro: 1024px
                         background-color: transparent
                     &:focus
                       outline: none
+                    @media screen and (max-width: $mobile)
+                      padding: 15px 
                 & button.btn
                     padding: 20px 40px 20px 90px
                     border-radius: 50px
