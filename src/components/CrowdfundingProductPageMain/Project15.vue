@@ -1,5 +1,11 @@
 <template>
   <div class="wrapper">
+    <PopUpSelected
+      v-if="isShowPopUp"
+      @closePopUp="closePopUp"
+      :isCheckedAverage="isCheckedAverage"
+      :isCheckedVip="isCheckedVip"
+    />
     <header class="header">
       <nav class="nav">
         <div class="image">
@@ -39,7 +45,7 @@
           </p>
         </div>
         <div class="intro_tools">
-          <button>Back this project</button>
+          <button @click="openPopUp">Back this project</button>
           <button
             class="btn"
             :class="{ active: isActiveButton }"
@@ -71,18 +77,74 @@
         </div>
         <div class="band"></div>
       </section>
-      <section class="about"></section>
+      <section class="about">
+        <h3>About this project</h3>
+        <p>
+          The Mastercraft Bamboo Monitor Riser is a sturdy and stylish platform
+          that elevates your screen to a more comfortable viewing height.
+          Placing your monitor at eye level has the potential to improve your
+          posture and make you more comfortable while at work, hepling you stay
+          focused on the task at hand.
+        </p>
+        <p>
+          Featuring artisan craftmanship, the simplicity of design creates extra
+          desk space below your computer to allow notepads, pens, and USB sticks
+          to be stored under the stand.
+        </p>
+        <div class="about__card">
+          <h3>Bamboo Stand <span>Pledge $25 or more</span></h3>
+          <p>
+            You get an ergonomic stand made of natural bamboo. You've helped us
+            launch our promotional campaign, and you'll be added to a special
+            Backer member list
+          </p>
+          <div class="card__item">
+            <h2>101 <span>left</span></h2>
+            <button @click="openPopUp(1)">Select Reward</button>
+          </div>
+        </div>
+        <div class="about__card">
+          <h3>Black Edition Stand<span>Pledge $75 or more</span></h3>
+          <p>
+            You get a Black Special Edition computer stand and a personal thank
+            you. You'll be added to our Backer member list. Shipping is
+            included.
+          </p>
+          <div class="card__item">
+            <h2>64 <span>left</span></h2>
+            <button @click="openPopUp(2)">Select Reward</button>
+          </div>
+        </div>
+        <div class="about__card" :class="{ 'not-active': isDisabled }">
+          <h3>Mahogany Special Edition<span>Pledge $200 or more</span></h3>
+          <p>
+            You get two Special Edition Mahogany stands, a Backer T-Shirt, and a
+            personal thank you. You'll be added to our Backer member list.
+            Shipping is included.
+          </p>
+          <div class="card__item">
+            <h2>0 <span>left</span></h2>
+            <button :disabled="isDisabled">Out of stock</button>
+          </div>
+        </div>
+      </section>
     </section>
   </div>
 </template>
 
 <script>
+import PopUpSelected from "./PopUpSelected.vue";
 export default {
   data: () => ({
     isOpen: false,
     isActiveButton: false,
     buttonValue: "Bookmark",
+    isDisabled: true,
+    isShowPopUp: false,
+    isCheckedAverage: false,
+    isCheckedVip: false,
   }),
+  components: { PopUpSelected },
   computed: {
     isMobile: function() {
       return this.windowWidth > 415 ? false : true;
@@ -93,6 +155,22 @@ export default {
       this.buttonValue =
         this.buttonValue === "Bookmark" ? "Bookmarked" : "Bookmark";
       this.isActiveButton = this.isActiveButton ? false : true;
+    },
+    closePopUp: function() {
+      this.isShowPopUp = false;
+      this.isCheckedAverage = false;
+      this.isCheckedVip = false;
+    },
+    openPopUp: function(value) {
+      switch (value) {
+        case 1:
+          this.isCheckedAverage = true;
+          break;
+        case 2:
+          this.isCheckedVip = true;
+          break;
+      }
+      this.isShowPopUp = true;
     },
   },
 };
@@ -113,6 +191,7 @@ $ipad-pro: 1024px
 .wrapper
     display: flex
     flex-wrap: wrap
+    position: relative
     & .header
         background: url('./images/image-hero-desktop.jpg') no-repeat
         background-size: cover
@@ -243,12 +322,14 @@ $ipad-pro: 1024px
                 & h1
                     color: hsl(0, 0%, 0%)
                     margin-bottom: 20px
+                    cursor: default
                     @media screen and (max-width: $mobile)
                       font-size: 1.7em
                 & p
                     color: hsl(0, 0%, 48%)
                     font-weight: 500
                     font-size: 18px
+                    cursor: default
             & .intro_tools
                 width: 100%
                 display: flex
@@ -272,6 +353,8 @@ $ipad-pro: 1024px
                         color: hsl(176, 50%, 47%)
                         border: 2px solid hsl(176, 50%, 47%)
                         background-color: transparent
+                    &:focus
+                      outline: none
                 & button.btn
                     padding: 20px 40px 20px 90px
                     border-radius: 50px
@@ -284,9 +367,11 @@ $ipad-pro: 1024px
                     cursor: pointer
                     user-select: none
                     -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+                    &:focus, &:active
+                      outline: none
                     @media screen and (max-width: $mobile)
                       padding: 20px 0
-                      width: 60px
+                      width: 63.5px
                       overflow: hidden
                     &:active
                         outline: none
@@ -314,6 +399,7 @@ $ipad-pro: 1024px
           box-shadow: 1px 1px 4px 2px rgba(0,0,0,.1)
           margin-top: 20px
           padding: 60px
+          margin-bottom: 20px
           @media screen and (max-width: $mobile)
             padding: 40px
           & .target__info
@@ -358,6 +444,7 @@ $ipad-pro: 1024px
                     left: 37%
               & li
                 width: 33%
+                cursor: default
                 @media screen and (max-width: $mobile)
                   width: 100%
                   margin-bottom: 40px
@@ -381,4 +468,91 @@ $ipad-pro: 1024px
               width: 90%
               background-color: hsl(176, 50%, 47%)
               border-radius: 50px
+        & .about
+          border-radius: 8px
+          box-shadow: 1px 1px 4px 2px rgba(0,0,0,.1)
+          padding: 60px
+          margin-bottom: 20px
+          cursor: default
+          @media screen and (max-width: $mobile)
+            padding: 40px 5%
+          & > h3
+            margin-bottom: 54px
+            font-weight: 700
+            font-size: 24px
+            @media screen and (max-width: $mobile)
+              margin-bottom: 34px
+          & p
+            color: hsl(0, 0%, 48%)
+            font-weight: 500
+            line-height: 28px
+            &:nth-child(3)
+              margin-top: 48px
+              margin-bottom: 54px
+              @media screen and (max-width: $mobile)
+                margin-top: 26px
+                margin-bottom: 34px
+          .about__card:last-child
+            margin-bottom: 0
+          .about__card
+            padding: 5%
+            border: 1px solid hsla(0, 0%, 0%,.3)
+            border-radius: 8px
+            margin-bottom: 20px
+            &.not-active
+              opacity: .5
+            & > h3
+              display: flex
+              justify-content: space-between
+              width: 100%
+              align-items: center
+              @media screen and (max-width: $mobile)
+                flex-direction: column
+                align-items: flex-start
+              & > span
+                color: hsl(176, 50%, 47%)
+                font-size: 16px
+                font-weight: 500
+                @media screen and (max-width: $mobile)
+                  margin-top: 10px
+            p
+              margin: 20px 0
+            .card__item
+              display: flex
+              align-items: center
+              justify-content: space-between
+              @media screen and (max-width: $mobile)
+                flex-direction: column
+                align-items: flex-start
+              h2
+                font-size: 2em
+                display: flex
+                align-items: center
+                @media screen and (max-width: $mobile)
+                  margin-bottom: 20px
+                span
+                  font-size: 16px
+                  color: hsla(0, 0%, 0%,.3)
+                  margin-left: 10px
+                  font-weight: 500
+              button
+                padding: 15px 25px
+                border-radius: 50px
+                border: 0
+                background-color: hsl(176, 50%, 47%)
+                color: hsl(0, 0%, 100%)
+                font-weight: 700
+                cursor: pointer
+                width: 25%
+                @media screen and (max-width: $mobile)
+                  width: 60%
+                &:active, &:focus
+                  outline: none
+                &:active
+                  transform: scale(0.98)
+                &:hover
+                  background-color: hsl(176, 72%, 28%)
+                &[disabled]
+                  background-color: hsla(0, 0%, 0%,.3)
+                  cursor: default
 </style>
