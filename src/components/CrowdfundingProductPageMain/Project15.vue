@@ -67,11 +67,11 @@
         <div class="target__info">
           <ul>
             <li>
-              <h1>$89,914</h1>
-              <p>of $100,000 backed</p>
+              <h1>${{ currentSumView }}</h1>
+              <p>of ${{ totalGoalView }} backed</p>
             </li>
             <li>
-              <h1>5,007</h1>
+              <h1>{{ currentBackersView }}</h1>
               <p>total backers</p>
             </li>
             <li>
@@ -80,7 +80,12 @@
             </li>
           </ul>
         </div>
-        <div class="band"></div>
+        <div class="band">
+          <div
+            class="band__progress"
+            :style="{ width: (currentSum / totalGoal) * 100 + '%' }"
+          ></div>
+        </div>
       </section>
       <section class="about">
         <h3>About this project</h3>
@@ -150,11 +155,23 @@ export default {
     isCheckedAverage: false,
     isCheckedVip: false,
     isSubscribe: false,
+    currentSum: 89914,
+    currentBackers: 5007,
+    totalGoal: 100000,
   }),
   components: { PopUpSelected, GratitudePopUp },
   computed: {
     isMobile: function() {
       return this.windowWidth > 415 ? false : true;
+    },
+    currentSumView: function() {
+      return this.addCommaToNumber(this.currentSum);
+    },
+    currentBackersView: function() {
+      return this.addCommaToNumber(this.currentBackers);
+    },
+    totalGoalView: function() {
+      return this.addCommaToNumber(this.totalGoal);
     },
   },
   methods: {
@@ -162,6 +179,15 @@ export default {
       this.buttonValue =
         this.buttonValue === "Bookmark" ? "Bookmarked" : "Bookmark";
       this.isActiveButton = this.isActiveButton ? false : true;
+    },
+    addCommaToNumber: function(value) {
+      if (value.toString().length <= 3) {
+        return value;
+      } else {
+        let arr = value.toString().split("");
+        arr.splice(arr.length - 3, 0, ",");
+        return arr.join("");
+      }
     },
     closePopUp: function() {
       this.isShowPopUp = false;
@@ -182,7 +208,10 @@ export default {
     closeGratitudePopUp: function() {
       this.isSubscribe = false;
     },
-    openGratitudePopUp: function() {
+    openGratitudePopUp: function(value) {
+      this.currentSum += +value;
+      this.currentBackers++;
+
       this.isSubscribe = true;
       this.closePopUp();
     },
@@ -490,16 +519,11 @@ $ipad-pro: 1024px
             height: 15px
             border-radius: 50px
             background-color: hsla(0, 0%, 48%,.2)
-            position: relative
-            &::after
-              content: ''
-              height: 100%
-              position: absolute
-              top: 0
-              left: 0
-              width: 90%
+            overflow: hidden
+            > .band__progress
               background-color: hsl(176, 50%, 47%)
-              border-radius: 50px
+              height: 100%
+
         & .about
           border-radius: 8px
           box-shadow: 1px 1px 4px 2px rgba(0,0,0,.1)

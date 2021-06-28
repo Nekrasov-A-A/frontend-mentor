@@ -26,7 +26,9 @@
 
         <div class="card__pledge basic" v-if="isCheckedBasic">
           <div class="card__pledge__tools ">
-            <button @click="openGratitudePopUp">Continue</button>
+            <form @submit.prevent="openGratitudePopUp(0)">
+              <button type="submit">Continue</button>
+            </form>
           </div>
         </div>
       </div>
@@ -45,10 +47,25 @@
 
         <div class="card__pledge" v-if="isCheckedAverage">
           <p>Enter your pledge</p>
-          <div class="card__pledge__tools">
-            <label><input type="number" value="25"/></label>
-            <button @click="openGratitudePopUp">Continue</button>
-          </div>
+          <ValidationObserver class="card__pledge__tools" ref="form">
+            <form @submit.prevent="openGratitudePopUp(basicValue)">
+              <ValidationProvider
+                v-slot="{ errors, invalid }"
+                rules="required|minmax:25,74"
+                class="pledge__label"
+              >
+                <label>
+                  <input
+                    type="number"
+                    v-model="basicValue"
+                    :class="{ 'has-error': invalid }"
+                  />
+                </label>
+                <span>{{ errors[0] }} </span>
+              </ValidationProvider>
+              <button type="submit">Continue</button>
+            </form>
+          </ValidationObserver>
         </div>
       </div>
       <div class="content__card" :class="{ 'selected-card': isCheckedVip }">
@@ -66,10 +83,25 @@
 
         <div class="card__pledge" v-if="isCheckedVip">
           <p>Enter your pledge</p>
-          <div class="card__pledge__tools">
-            <label><input type="number" value="75"/></label>
-            <button @click="openGratitudePopUp">Continue</button>
-          </div>
+          <ValidationObserver class="card__pledge__tools" ref="form">
+            <form @submit.prevent="openGratitudePopUp(valueBlackEdition)">
+              <ValidationProvider
+                v-slot="{ errors, invalid }"
+                rules="minmax:75,199|required"
+                class="pledge__label"
+              >
+                <label>
+                  <input
+                    type="number"
+                    v-model="valueBlackEdition"
+                    :class="{ 'has-error': invalid }"
+                  />
+                </label>
+                <span>{{ errors[0] }} </span>
+              </ValidationProvider>
+              <button type="submit">Continue</button>
+            </form>
+          </ValidationObserver>
         </div>
       </div>
       <div class="content__card content-blur">
@@ -88,11 +120,16 @@
 </template>
 
 <script>
+import { ValidationProvider, ValidationObserver } from "vee-validate";
+
 export default {
   props: ["isCheckedAverage", "isCheckedVip"],
+  components: { ValidationProvider, ValidationObserver },
   data: () => ({
     isSelected: false,
     isCheckedBasic: false,
+    valueBlackEdition: 75,
+    basicValue: 25,
   }),
   methods: {
     isChecked: function(number) {
@@ -118,8 +155,14 @@ export default {
     closePopUp: function() {
       this.$emit("closePopUp");
     },
-    openGratitudePopUp: function() {
-      this.$emit("openGratitudePopUp");
+    openGratitudePopUp: function(value) {
+      if (value === 0) this.$emit("openGratitudePopUp", value);
+      this.$refs.form.validate().then((success) => {
+        if (!success) {
+          return;
+        }
+        this.$emit("openGratitudePopUp", value);
+      });
     },
   },
 };
@@ -332,51 +375,62 @@ $ipad-pro: 1024px
                     @media screen and (max-width: $mobile)
                       margin-bottom: 20px
                 .card__pledge__tools
-                  & > label
-                      position: relative
-                      margin-right: 20px
-                      cursor: pointer
-                      &::before
-                          content: '$'
-                          position: absolute
-                          top: 0
-                          left: 20%
-                          color: hsla(0, 0%, 48%,.7)
-                          font-weight: 500
-                      input[type="number"]::-webkit-outer-spin-button,
-                      input[type="number"]::-webkit-inner-spin-button
-                          -webkit-appearance: none
-                      input[type='number'],
-                      input[type="number"]:hover,
-                      input[type="number"]:focus
-                          appearance: none
-                          -moz-appearance: textfield
-                      > input
-                          border: 1px solid hsla(0, 0%, 0%,.3)
-                          border-radius: 50px
-                          padding: 15px 30px
-                          width: 100px
-                          text-align: center
-                          cursor: pointer
-                          caret-color: hsl(176, 50%, 47%)
-                          &:hover
-                              border: 1px solid  hsl(176, 50%, 47%)
-                          &[value]
-                              color: hsl(0, 0%, 0%)
-                              font-weight: 700
-                          &:active, &:focus
-                              outline: none
-                              border: 1px solid  hsl(176, 50%, 47%)
-                  & button
-                      width: 110px
-                      padding: 16px 0
-                      border-radius: 50px
-                      text-align: center
-                      border: 0
-                      background-color: hsl(176, 50%, 47%)
-                      color: hsl(0,0%,100%)
-                      font-weight: 500
-                      cursor: pointer
-                      &:hover
-                          background-color: hsl(176, 72%, 28%)
+                  form
+                    display: flex
+                    & .pledge__label
+                      display: flex
+                      flex-direction: column
+                      > span
+                        color: red
+                        font-size: 14px
+                      & > label
+                        position: relative
+                        margin-right: 20px
+                        cursor: pointer
+                        &::before
+                            content: '$'
+                            position: absolute
+                            top: 30%
+                            left: 20%
+                            color: hsla(0, 0%, 48%,.7)
+                            font-weight: 500
+                        input[type="number"]::-webkit-outer-spin-button,
+                        input[type="number"]::-webkit-inner-spin-button
+                            -webkit-appearance: none
+                        input[type='number'],
+                        input[type="number"]:hover,
+                        input[type="number"]:focus
+                            appearance: none
+                            -moz-appearance: textfield
+                        > input
+                            border: 1px solid hsla(0, 0%, 0%,.3)
+                            border-radius: 50px
+                            padding: 15px 30px
+                            width: 100px
+                            text-align: center
+                            cursor: pointer
+                            caret-color: hsl(176, 50%, 47%)
+                            &.has-error
+                              border: 1px solid red
+                            &:hover
+                                border: 1px solid  hsl(176, 50%, 47%)
+                            &[value]
+                                color: hsl(0, 0%, 0%)
+                                font-weight: 700
+                            &:active, &:focus
+                                outline: none
+                                border: 1px solid  hsl(176, 50%, 47%)
+                    & button
+                        width: 110px
+                        max-height: 50px
+                        padding: 16px 0
+                        border-radius: 50px
+                        text-align: center
+                        border: 0
+                        background-color: hsl(176, 50%, 47%)
+                        color: hsl(0,0%,100%)
+                        font-weight: 500
+                        cursor: pointer
+                        &:hover
+                            background-color: hsl(176, 72%, 28%)
 </style>

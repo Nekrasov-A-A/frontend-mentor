@@ -4,6 +4,7 @@ import router from "./router";
 import store from "./store";
 import VueWindowSize from "vue-window-size";
 import "./fa.config";
+import "./vee-vlidate.config";
 Vue.config.productionTip = false;
 
 Vue.use(VueWindowSize);
