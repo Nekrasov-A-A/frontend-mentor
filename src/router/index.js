@@ -23,6 +23,10 @@ const routes = [
         path: "crowdfunding-product-page-main",
         component: () => import("../views/CrowdfundingProductPageMain.vue"),
       },
+      {
+        path: "interactive-pricing-component-main",
+        component: () => import("../views/InteractivePricingComponentMain.vue"),
+      },
     ],
   },
 ];

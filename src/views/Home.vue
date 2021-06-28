@@ -4,6 +4,9 @@
     <router-link to="/junior/crowdfunding-product-page-main"
       >Project15</router-link
     >
+    <router-link to="/junior/interactive-pricing-component-main"
+      >Project16</router-link
+    >
 
     <StatsPreviewCardComponent />
     <ProjectSecond />

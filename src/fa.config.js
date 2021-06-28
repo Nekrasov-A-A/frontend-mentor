@@ -16,6 +16,8 @@ import {
   faTimes,
   faBookmark,
   faCheck,
+  faCaretLeft,
+  faCaretRight,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -30,6 +32,8 @@ library.add(
   faTimes,
   faBookmark,
   faCheck,
+  faCaretLeft,
+  faCaretRight
 );
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);
