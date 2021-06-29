@@ -313,12 +313,13 @@ $ipad-pro: 1024px
                             background-color: hsla(0, 0%, 0%,.3)
                             bottom: 0
                             left: 0
-                @media screen and (max-width: $mobile)
-                    display: none
+
                 @media screen and (max-width: $ipad-pro)
                     width: 40%
                 @media screen and (max-width: $ipad)
                     width: 55%
+                @media screen and (max-width: $mobile)
+                    display: none
                 & li
                     margin-left: 40px
                     color: hsl(0, 0%, 100%)
@@ -341,11 +342,13 @@ $ipad-pro: 1024px
         justify-content: center
         padding: 0 20%
         transform: translateY(-15vh)
+
+
+        @media screen and (max-width: $ipad-pro)
+          padding: 0 10%
         @media screen and (max-width: $mobile)
           padding: 0 5%
         @media screen and (max-width: $ipad)
-          padding: 0 10%
-        @media screen and (max-width: $ipad-pro)
           padding: 0 10%
         & .intro
             display: flex
@@ -502,13 +505,14 @@ $ipad-pro: 1024px
               & li
                 width: 33%
                 cursor: default
-                @media screen and (max-width: $mobile)
-                  width: 100%
-                  margin-bottom: 40px
+
                 @media screen and (max-width: $ipad)
                   display: flex
                   flex-direction: column
                   align-items: center
+                @media screen and (max-width: $mobile)
+                  width: 100%
+                  margin-bottom: 40px
                 & h1
                   color: hsl(0, 0%, 0%)
                   margin-bottom: 5px

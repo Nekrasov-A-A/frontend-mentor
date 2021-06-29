@@ -205,14 +205,16 @@ $ipad-pro: 1024px
         &::-webkit-scrollbar
           width: 0
           height: 0
-        @media screen and (max-width: $mobile)
-          width: 90%
+
+
+        @media screen and (max-width: $ipad-pro)
+          width: 80%
           padding: 40px 5%
         @media screen and (max-width: $ipad)
           width: 80%
           padding: 40px 5%
-        @media screen and (max-width: $ipad-pro)
-          width: 80%
+        @media screen and (max-width: $mobile)
+          width: 90%
           padding: 40px 5%
         .content__icon
             position: absolute

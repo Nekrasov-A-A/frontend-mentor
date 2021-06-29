@@ -58,11 +58,11 @@ $ipad-pro: 1024px
         align-items: center
         justify-content: center
         flex-wrap: wrap
-        @media screen and (max-width: $mobile)
-            width: 90%
-            padding: 40px 5%
         @media screen and (max-width: $ipad)
             width: 50%
+            padding: 40px 5%
+        @media screen and (max-width: $mobile)
+            width: 90%
             padding: 40px 5%
 
         .gratitude__content__icon-wrapper
