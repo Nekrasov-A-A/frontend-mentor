@@ -31,6 +31,10 @@ const routes = [
         path: "loopstudios-landing-page-main",
         component: () => import("../views/LoopstudiosLandingPageMain.vue"),
       },
+      {
+        path: "testimonials-grid-section-main",
+        component: () => import("../views/TestimonialsGridSectionMain.vue"),
+      },
     ],
   },
 ];

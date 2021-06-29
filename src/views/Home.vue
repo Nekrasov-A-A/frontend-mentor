@@ -10,6 +10,9 @@
     <router-link to="/junior/loopstudios-landing-page-main"
       >Project17</router-link
     >
+    <router-link to="/junior/testimonials-grid-section-main"
+      >Project18</router-link
+    >
     <StatsPreviewCardComponent />
     <ProjectSecond />
     <ProfileCardComponent />
