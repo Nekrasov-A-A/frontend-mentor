@@ -27,6 +27,10 @@ const routes = [
         path: "interactive-pricing-component-main",
         component: () => import("../views/InteractivePricingComponentMain.vue"),
       },
+      {
+        path: "loopstudios-landing-page-main",
+        component: () => import("../views/LoopstudiosLandingPageMain.vue"),
+      },
     ],
   },
 ];

@@ -7,7 +7,9 @@
     <router-link to="/junior/interactive-pricing-component-main"
       >Project16</router-link
     >
-
+    <router-link to="/junior/loopstudios-landing-page-main"
+      >Project17</router-link
+    >
     <StatsPreviewCardComponent />
     <ProjectSecond />
     <ProfileCardComponent />
