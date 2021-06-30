@@ -35,6 +35,10 @@ const routes = [
         path: "testimonials-grid-section-main",
         component: () => import("../views/TestimonialsGridSectionMain.vue"),
       },
+      {
+        path: "fylo-data-storage-component-master",
+        component: () => import("../views/FyloDataStorageComponentMaster.vue"),
+      },
     ],
   },
 ];

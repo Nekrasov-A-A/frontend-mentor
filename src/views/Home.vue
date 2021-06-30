@@ -13,6 +13,9 @@
     <router-link to="/junior/testimonials-grid-section-main"
       >Project18</router-link
     >
+    <router-link to="/junior/fylo-data-storage-component-master"
+      >Project19</router-link
+    >
     <StatsPreviewCardComponent />
     <ProjectSecond />
     <ProfileCardComponent />
