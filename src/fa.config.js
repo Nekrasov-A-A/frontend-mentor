@@ -23,6 +23,8 @@ import {
   faFile,
   faFolder,
   faCloudUploadAlt,
+  faAngleRight,
+  faAngleLeft,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -43,7 +45,9 @@ library.add(
   faInstagramSquare,
   faFile,
   faFolder,
-  faCloudUploadAlt
+  faCloudUploadAlt,
+  faAngleRight,
+  faAngleLeft
 );
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);

@@ -16,6 +16,9 @@
     <router-link to="/junior/fylo-data-storage-component-master"
       >Project19</router-link
     >
+    <router-link to="/junior/coding-bootcamp-testimonials-slider-master"
+      >Project20</router-link
+    >
     <StatsPreviewCardComponent />
     <ProjectSecond />
     <ProfileCardComponent />

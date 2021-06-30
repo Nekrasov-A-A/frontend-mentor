@@ -39,6 +39,11 @@ const routes = [
         path: "fylo-data-storage-component-master",
         component: () => import("../views/FyloDataStorageComponentMaster.vue"),
       },
+      {
+        path: "coding-bootcamp-testimonials-slider-master",
+        component: () =>
+          import("../views/CodingBootcampTestimonialsSliderMaster.vue"),
+      },
     ],
   },
 ];
