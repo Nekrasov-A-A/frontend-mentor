@@ -44,6 +44,11 @@ const routes = [
         component: () =>
           import("../views/CodingBootcampTestimonialsSliderMaster.vue"),
       },
+      {
+        path: "social-media-dashboard-with-theme-switcher-master",
+        component: () =>
+          import("../views/SocialMediaDashboardWithThemeSwitcherMaster.vue"),
+      },
     ],
   },
 ];

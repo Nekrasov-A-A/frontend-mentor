@@ -19,6 +19,9 @@
     <router-link to="/junior/coding-bootcamp-testimonials-slider-master"
       >Project20</router-link
     >
+    <router-link to="/junior/social-media-dashboard-with-theme-switcher-master"
+      >Project21</router-link
+    >
     <StatsPreviewCardComponent />
     <ProjectSecond />
     <ProfileCardComponent />
