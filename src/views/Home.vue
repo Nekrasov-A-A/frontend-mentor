@@ -22,6 +22,7 @@
     <router-link to="/junior/social-media-dashboard-with-theme-switcher-master"
       >Project21</router-link
     >
+    <router-link to="/junior/insure-landing-page-master">Project22</router-link>
     <StatsPreviewCardComponent />
     <ProjectSecond />
     <ProfileCardComponent />

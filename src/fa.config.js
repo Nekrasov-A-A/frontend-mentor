@@ -34,6 +34,9 @@ import {
   faSortDown,
   faCircle,
   faSquareFull,
+  faBolt,
+  faDollarSign,
+  faUser,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -61,7 +64,10 @@ library.add(
   faSortDown,
   faCircle,
   faSquareFull,
-  faYoutube
+  faYoutube,
+  faBolt,
+  faDollarSign,
+  faUser
 );
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);

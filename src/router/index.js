@@ -49,6 +49,10 @@ const routes = [
         component: () =>
           import("../views/SocialMediaDashboardWithThemeSwitcherMaster.vue"),
       },
+      {
+        path: "insure-landing-page-master",
+        component: () => import("../views/InsureLandingPageMaster.vue"),
+      },
     ],
   },
 ];
