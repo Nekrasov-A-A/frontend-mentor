@@ -58,6 +58,11 @@ const routes = [
         component: () =>
           import("../views/PricingComponentWithToggleMaster.vue"),
       },
+      {
+        path: "project-tracking-intro-component-master",
+        component: () =>
+          import("../views/ProjectTrackingIntroComponentMaster.vue"),
+      },
     ],
   },
 ];

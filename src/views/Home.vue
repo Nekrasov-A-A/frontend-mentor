@@ -26,6 +26,9 @@
     <router-link to="/junior/pricing-component-with-toggle-master"
       >Project23</router-link
     >
+    <router-link to="/junior/project-tracking-intro-component-master"
+      >Project24</router-link
+    >
     <StatsPreviewCardComponent />
     <ProjectSecond />
     <ProfileCardComponent />
