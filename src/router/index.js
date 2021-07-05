@@ -53,6 +53,11 @@ const routes = [
         path: "insure-landing-page-master",
         component: () => import("../views/InsureLandingPageMaster.vue"),
       },
+      {
+        path: "pricing-component-with-toggle-master",
+        component: () =>
+          import("../views/PricingComponentWithToggleMaster.vue"),
+      },
     ],
   },
 ];

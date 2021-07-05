@@ -23,6 +23,9 @@
       >Project21</router-link
     >
     <router-link to="/junior/insure-landing-page-master">Project22</router-link>
+    <router-link to="/junior/pricing-component-with-toggle-master"
+      >Project23</router-link
+    >
     <StatsPreviewCardComponent />
     <ProjectSecond />
     <ProfileCardComponent />
