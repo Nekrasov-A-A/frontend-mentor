@@ -63,6 +63,10 @@ const routes = [
         component: () =>
           import("../views/ProjectTrackingIntroComponentMaster.vue"),
       },
+      {
+        path: "clipboard-landing-page-master",
+        component: () => import("../views/ClipboardLandingPageMaster.vue"),
+      },
     ],
   },
 ];

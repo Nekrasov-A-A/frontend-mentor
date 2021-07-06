@@ -29,6 +29,9 @@
     <router-link to="/junior/project-tracking-intro-component-master"
       >Project24</router-link
     >
+    <router-link to="/junior/clipboard-landing-page-master"
+      >Project 25</router-link
+    >
     <StatsPreviewCardComponent />
     <ProjectSecond />
     <ProfileCardComponent />
