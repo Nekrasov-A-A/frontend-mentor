@@ -37,6 +37,9 @@ import {
   faBolt,
   faDollarSign,
   faUser,
+  faMapMarkerAlt,
+  faPhoneAlt,
+  faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -67,7 +70,10 @@ library.add(
   faYoutube,
   faBolt,
   faDollarSign,
-  faUser
+  faUser,
+  faMapMarkerAlt,
+  faPhoneAlt,
+  faEnvelope
 );
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);

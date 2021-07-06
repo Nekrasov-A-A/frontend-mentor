@@ -32,6 +32,10 @@
     <router-link to="/junior/clipboard-landing-page-master"
       >Project 25</router-link
     >
+    <router-link
+      to="/junior/landing-page-with-alternating-feature-blocks-master"
+      >Project26</router-link
+    >
     <StatsPreviewCardComponent />
     <ProjectSecond />
     <ProfileCardComponent />

@@ -11,13 +11,13 @@ The designs were created to the following widths:
 
 ### Primary
 
-- Strong Cyan: hsl(171, 66%, 44%)
-- Light Blue: hsl(233, 100%, 69%)
+- Pink: hsl(322, 100%, 66%)
 
 ### Neutral
 
-- Dark Grayish Blue: hsl(210, 10%, 33%)
-- Grayish Blue: hsl(201, 11%, 66%)
+- Very Pale Cyan: hsl(193, 100%, 96%)
+- Very Dark Cyan: hsl(192, 100%, 9%)
+- Grayish Blue: hsl(208, 11%, 55%)
 
 ## Typography
 
@@ -25,15 +25,20 @@ The designs were created to the following widths:
 
 - Font size: 18px
 
-### Fonts
+### Headings
 
-- Family: [Bai Jamjuree](https://fonts.google.com/specimen/Bai+Jamjuree)
-- Weights: 400, 600
+- Family: [Poppins](https://fonts.google.com/specimen/Poppins)
+- Weights: 600
+
+### Body, Call-to-actions
+
+- Family: [Open Sans](https://fonts.google.com/specimen/Open+Sans)
+- Weights: 400, 700
 
 ## Icons
 
-For the social icons, you can use the SVGs provided or a font icon library. Some font icon library suggestions can be found below:
+For the social icons, you can use a font icon library. Some suggestions can be found below:
 
-- [Font Awesome](https://fontawesome.com)
-- [IcoMoon](https://icomoon.io)
-- [Ionicons](https://ionicons.com)
+- [Font Awesome](https://fontawesome.com/)
+- [IcoMoon](https://icomoon.io/)
+- [Ionicons](https://ionicons.com/)

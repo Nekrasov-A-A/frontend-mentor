@@ -67,6 +67,11 @@ const routes = [
         path: "clipboard-landing-page-master",
         component: () => import("../views/ClipboardLandingPageMaster.vue"),
       },
+      {
+        path: "landing-page-with-alternating-feature-blocks-master",
+        component: () =>
+          import("../views/LandingPageWithAlternatingFeatureBlocksMaster.vue"),
+      },
     ],
   },
 ];
