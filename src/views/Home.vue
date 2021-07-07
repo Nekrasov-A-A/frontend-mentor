@@ -39,6 +39,9 @@
     <router-link to="/junior/fylo-dark-theme-landing-page-master"
       >Project27</router-link
     >
+    <router-link to="/junior/fylo-landing-page-with-two-column-layout-master">
+      Project28</router-link
+    >
     <StatsPreviewCardComponent />
     <ProjectSecond />
     <ProfileCardComponent />

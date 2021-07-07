@@ -40,6 +40,7 @@ import {
   faMapMarkerAlt,
   faPhoneAlt,
   faEnvelope,
+  faQuoteLeft,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -74,7 +75,8 @@ library.add(
   faMapMarkerAlt,
   faPhoneAlt,
   faEnvelope,
-  faAngleRight
+  faAngleRight,
+  faQuoteLeft
 );
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);

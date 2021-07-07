@@ -76,6 +76,11 @@ const routes = [
         path: "fylo-dark-theme-landing-page-master",
         component: () => import("../views/FyloDarkThemeLandingPageMaster.vue"),
       },
+      {
+        path: "fylo-landing-page-with-two-column-layout-master",
+        component: () =>
+          import("../views/FyloLandingPageWithTwoColumnLayoutMaster.vue"),
+      },
     ],
   },
 ];

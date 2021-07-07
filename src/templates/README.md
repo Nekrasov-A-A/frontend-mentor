@@ -1,14 +1,14 @@
-# Frontend Mentor - Fylo dark theme landing page
+# Frontend Mentor - Fylo landing page with two column layout
 
-![Design preview for the Fylo dark theme landing page challenge](./design/desktop-preview.jpg)
+![Design preview for the Fylo landing page with two column layout challenge](./design/desktop-preview.jpg)
 
 ## Welcome! 👋
 
 Thanks for checking out this front-end coding challenge.
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
+[Frontend Mentor](https://www.frontendmentor.io) challenges allow you to improve your skills in a real-life workflow.
 
-**To do this challenge you need a basic understanding of HTML and CSS.**
+**To do this challenge, you need a basic understanding of HTML and CSS.**
 
 ## The challenge
 
