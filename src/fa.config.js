@@ -73,7 +73,8 @@ library.add(
   faUser,
   faMapMarkerAlt,
   faPhoneAlt,
-  faEnvelope
+  faEnvelope,
+  faAngleRight
 );
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);

@@ -36,6 +36,9 @@
       to="/junior/landing-page-with-alternating-feature-blocks-master"
       >Project26</router-link
     >
+    <router-link to="/junior/fylo-dark-theme-landing-page-master"
+      >Project27</router-link
+    >
     <StatsPreviewCardComponent />
     <ProjectSecond />
     <ProfileCardComponent />

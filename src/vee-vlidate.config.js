@@ -1,5 +1,5 @@
 import { extend } from "vee-validate";
-import { required } from "vee-validate/dist/rules";
+import { required, email } from "vee-validate/dist/rules";
 import { configure } from "vee-validate";
 
 extend("minmax", {
@@ -13,6 +13,11 @@ extend("minmax", {
 extend("required", {
   ...required,
   message: "This field is required",
+});
+
+extend("email", {
+  ...email,
+  message: "Please write valid email",
 });
 
 configure({

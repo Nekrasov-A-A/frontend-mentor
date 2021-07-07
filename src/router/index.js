@@ -72,6 +72,10 @@ const routes = [
         component: () =>
           import("../views/LandingPageWithAlternatingFeatureBlocksMaster.vue"),
       },
+      {
+        path: "fylo-dark-theme-landing-page-master",
+        component: () => import("../views/FyloDarkThemeLandingPageMaster.vue"),
+      },
     ],
   },
 ];
