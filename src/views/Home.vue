@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- Junior challenge start -->
     <router-link to="/junior/blogr-landing-page">Project14</router-link>
     <router-link to="/junior/crowdfunding-product-page-main"
       >Project15</router-link
@@ -42,6 +43,10 @@
     <router-link to="/junior/fylo-landing-page-with-two-column-layout-master">
       Project28</router-link
     >
+    <router-link to="/junior/huddle-landing-page-with-curved-sections-master"
+      >Project29</router-link
+    >
+    <!-- Junior challenge end -->
     <StatsPreviewCardComponent />
     <ProjectSecond />
     <ProfileCardComponent />
@@ -56,6 +61,7 @@
     <Project12 />
     <!-- Junior challenge start -->
     <Project13 />
+    <!-- Junior challenge end -->
   </div>
 </template>
 

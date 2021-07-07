@@ -14,6 +14,7 @@ import {
   faPinterest,
   faInstagramSquare,
   faYoutube,
+  faTwitterSquare,
 } from "@fortawesome/free-brands-svg-icons";
 
 import {
@@ -76,7 +77,8 @@ library.add(
   faPhoneAlt,
   faEnvelope,
   faAngleRight,
-  faQuoteLeft
+  faQuoteLeft,
+  faTwitterSquare
 );
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);

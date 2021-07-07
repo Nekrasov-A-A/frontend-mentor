@@ -81,6 +81,11 @@ const routes = [
         component: () =>
           import("../views/FyloLandingPageWithTwoColumnLayoutMaster.vue"),
       },
+      {
+        path: "huddle-landing-page-with-curved-sections-master",
+        component: () =>
+          import("../views/HuddleLandingPageWithCurvedSectionsMaster.vue"),
+      },
     ],
   },
 ];
