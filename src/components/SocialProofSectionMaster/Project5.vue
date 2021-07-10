@@ -1,83 +1,92 @@
 <template>
   <div class="wrapper">
-    <div class="card">
-      <div class="card__info">
-        <h1>10,000+ of our users love our products.</h1>
+    <div class="about">
+      <div class="about__info">
+        <h1>
+          10,000+ of our <br />
+          users love our <br />
+          products.
+        </h1>
         <p>
           We only provide great products combined with excellent customer
           service. See what our satisfied customers are saying about our
           services.
         </p>
       </div>
-      <div class="card__rating">
-        <div class="item">
-          <img src="./images/icon-star.svg" alt="star icon" />
-          <img src="./images/icon-star.svg" alt="star icon" />
-          <img src="./images/icon-star.svg" alt="star icon" />
-          <img src="./images/icon-star.svg" alt="star icon" />
-          <img src="./images/icon-star.svg" alt="star icon" />
-          <h2>Rated 5 stars in Reviews</h2>
+      <div class="about__rate">
+        <div class="rate__card">
+          <font-awesome-icon icon="star" class="icon" />
+          <font-awesome-icon icon="star" class="icon" />
+          <font-awesome-icon icon="star" class="icon" />
+          <font-awesome-icon icon="star" class="icon" />
+          <font-awesome-icon icon="star" class="icon" />
+          <p>Rated 5 Stars in Reviews</p>
         </div>
-        <div class="item">
-          <img src="./images/icon-star.svg" alt="star icon" />
-          <img src="./images/icon-star.svg" alt="star icon" />
-          <img src="./images/icon-star.svg" alt="star icon" />
-          <img src="./images/icon-star.svg" alt="star icon" />
-          <img src="./images/icon-star.svg" alt="star icon" />
-          <h2>Rated 5 stars in Report Guru</h2>
+        <div class="rate__card">
+          <font-awesome-icon icon="star" class="icon" />
+          <font-awesome-icon icon="star" class="icon" />
+          <font-awesome-icon icon="star" class="icon" />
+          <font-awesome-icon icon="star" class="icon" />
+          <font-awesome-icon icon="star" class="icon" />
+          <p>Rated 5 Stars in Report Guru</p>
         </div>
-        <div class="item">
-          <img src="./images/icon-star.svg" alt="star icon" />
-          <img src="./images/icon-star.svg" alt="star icon" />
-          <img src="./images/icon-star.svg" alt="star icon" />
-          <img src="./images/icon-star.svg" alt="star icon" />
-          <img src="./images/icon-star.svg" alt="star icon" />
-          <h2>Rated 5 stars in BestTech</h2>
+        <div class="rate__card">
+          <font-awesome-icon icon="star" class="icon" />
+          <font-awesome-icon icon="star" class="icon" />
+          <font-awesome-icon icon="star" class="icon" />
+          <font-awesome-icon icon="star" class="icon" />
+          <font-awesome-icon icon="star" class="icon" />
+          <p>
+            Rated 5 Stars in BestTech
+          </p>
         </div>
       </div>
-      <div class="card__testimonials">
-        <div class="item">
-          <div class="header">
-            <img src="./images/image-colton.jpg" alt="photo" />
-            <h2>
-              Colton Smith <br />
-              <span>Verified buyer</span>
-            </h2>
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate,
-            cum dolore explicabo doloribus id quis placeat iure quam velit atque
-            vero nesciunt
-          </p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="card__person">
+          <img src="./images/image-colton.jpg" alt="colton" />
+          <h3>
+            Colton Smith
+            <br />
+            <span>Verified Buyer</span>
+          </h3>
         </div>
-        <div class="item">
-          <div class="header">
-            <img src="./images/image-irene.jpg" alt="photo" />
-            <h2>
-              Irene Roberts <br />
-              <span>Verified buyer</span>
-            </h2>
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate,
-            cum dolore explicabo doloribus id quis placeat iure quam velit atque
-            vero nesciunt
-          </p>
+        <p>
+          "We needed the same printed design as the one we had ordered a week
+          prior. Not only did they find the original order, but we also received
+          it in time. Excellent!"
+        </p>
+      </div>
+      <div class="card">
+        <div class="card__person">
+          <img src="./images/image-irene.jpg" alt="irene" />
+          <h3>
+            Irene Roberts
+            <br />
+            <span>Verified Buyer</span>
+          </h3>
         </div>
-        <div class="item">
-          <div class="header">
-            <img src="./images/image-anne.jpg" alt="photo" />
-            <h2>
-              Anne Wallace <br />
-              <span>Verified buyer</span>
-            </h2>
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate,
-            cum dolore explicabo doloribus id quis placeat iure quam velit atque
-            vero nesciunt
-          </p>
+        <p>
+          "Customer service is always excellent and very quick turn around.
+          Completely delighted with the simplicity of the purchase and the speed
+          of delivery."
+        </p>
+      </div>
+      <div class="card">
+        <div class="card__person">
+          <img src="./images/image-anne.jpg" alt="anne" />
+          <h3>
+            Anne Wallace
+            <br />
+            <span>Verified Buyer</span>
+          </h3>
         </div>
+        <p>
+          "Put an order with this company and can only praise them for the very
+          high standard. Will definitely use them again and recommend them to
+          everyone!"
+        </p>
       </div>
     </div>
   </div>
@@ -91,124 +100,145 @@ export default {};
 
 @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap')
 
-$mobile: 375px
-
+*
+  font-family: 'Spartan'
 .wrapper
+  display: flex
+  min-height: 100vh
+  flex-direction: column
+  padding: 0 10%
+  align-items: center
+  justify-content: center
+  background: url('./images/bg-pattern-top-desktop.svg') left top no-repeat, url('./images/bg-pattern-bottom-desktop.svg') right bottom no-repeat
+  @media screen and (max-width: $ipad-pro)
+    padding: 0 5%
+  @media screen and (max-width: $ipad)
+    padding: 80px 5%
+  @media screen and (max-width: $mobile)
+     background: url('./images/bg-pattern-top-mobile.svg') left top no-repeat, url('./images/bg-pattern-bottom-mobile.svg') right bottom no-repeat
+  .about
     display: flex
+    justify-content: space-between
     align-items: center
-    justify-content: center
-    min-height: 100vh
-    background: url('./images/bg-pattern-top-desktop.svg') 5% 0% no-repeat, url('./images/bg-pattern-bottom-desktop.svg') 100% 100% no-repeat
-    font-family: 'Spartan'
-    @media screen and (max-width: $mobile)
-        background: url('./images/bg-pattern-top-mobile.svg') 5% 0% no-repeat, url('./images/bg-pattern-bottom-mobile.svg') 100% 100% no-repeat
-    & .card
+    margin-bottom: 60px
+    @media screen and (max-width: $ipad)
+      flex-direction: column
+      text-align: center
+    .about__info
+      width: 30%
+      @media screen and (max-width: $ipad-pro)
+        width: 40%
+      @media screen and (max-width: $ipad)
+        width: 100%
+      > h1
+        color: hsl(300, 43%, 22%)
+        margin-bottom: 10px
+        letter-spacing: -1px
+        font-size: 2.5em
+      > p
+        line-height: 24px
+        font-size: 15px
+        color: #9e979f
+        font-weight: 400
+        @media screen and (max-width: $ipad)
+          margin-bottom: 40px
+    .about__rate
+      width: 50%
+      display: flex
+      flex-direction: column
+      justify-content: space-around
+      @media screen and (max-width: $ipad)
+        width: 100%
+      .rate__card
+        padding: 20px 35px
+        background-color: #f7f2f8
+        border-radius: 8px
+        margin-bottom: 15px
         display: flex
-        margin: 0 10%
-        justify-content: space-between
-        flex-wrap: wrap
-        @media screen and (max-width: $mobile)
-            margin: 0 5%
-            width: 90%
-        & .card__info
-            text-align: left
-            width: 35%
-            @media screen and (max-width: $mobile)
-                text-align: center
-                width: 100%
-            & p
-                color: hsl(303, 10%, 53%)
-                font-weight: 500
-                font-size: 14px
-            & h1
-                color: hsl(300, 43%, 22%)
-                font-weight: 700
-                font-size: 2.7em
-                margin: 0
-                @media screen and (max-width: $mobile)
-                    padding: 80px 30px 5px 30px
-        & .card__rating
+        @media screen and (max-width: $ipad-pro)
+          padding: 15px 20px
+        @media screen and (max-width: $ipad)
+          flex-wrap: wrap
+          justify-content: center
+        &:nth-child(1)
+          margin-right: 100px
+          @media screen and (max-width: $ipad-pro)
+            margin-right: 50px
+          @media screen and (max-width: $ipad)
+            margin: 0 0 20px
+        &:nth-child(2)
+          margin-left: 50px
+          margin-right: 50px
+          @media screen and (max-width: $ipad-pro)
+            margin: 0 25px 15px
+          @media screen and (max-width: $ipad)
+              margin: 0 0 20px
+        &:nth-child(3)
+          margin-left: 100px
+          @media screen and (max-width: $ipad-pro)
+            margin-left: 50px
+          @media screen and (max-width: $ipad)
+            margin: 0 0 20px
+        .icon
+          width: 18px
+          height: 18px
+          margin-right: 12px
+          color: #e79146
+          @media screen and (max-width: $ipad-pro)
+            margin-right: 6px
 
-            & .item
-                padding: 8px 30px
-                background-color: hsl(300, 24%, 96%)
-                border-radius: 8px
-                display: flex
-                align-items: center
-                margin-top: 20px
-                width: 430px
-                @media screen and (max-width: $mobile)
-                    flex-wrap: wrap
-                    justify-content: center
-                    text-align: center
-                    padding: 8px 0
-                    width: 100%
-                &:nth-child(2)
-                    margin-left: 40px
-                    @media screen and (max-width: $mobile)
-                        margin-left: 0
-                &:nth-child(3)
-                    margin-left: 80px
-                    @media screen and (max-width: $mobile)
-                        margin-left: 0
-                & img
-                    margin-left: 5px
-                    height: 100%
-                & h2
-                    font-size: 14px
-                    margin-left: 40px
-                    margin-right: 40px
-                    color: hsl(300, 43%, 22%)
-                    font-weight: 700
-                    @media screen and (max-width: $mobile)
-                        width: 100%
-                        margin-right: 0
-                        margin-left: 0
-        & .card__testimonials
-            margin-top: 60px
-            display: flex
+
+        > p
+          color: #452145
+          font-weight: 600
+          margin-left: 10px
+          @media screen and (max-width: $ipad-pro)
+            font-size: 14px
+          @media screen and (max-width: $ipad)
+            display: block
             width: 100%
-            @media screen and (max-width: $mobile)
-                flex-direction: column
-                margin-top: 40px
-            & .item
-                background-color: hsl(300, 43%, 22%)
-                border-radius: 8px
-                width: 30%
-                max-height: 80%
-                padding: 40px
-                box-sizing: border-box
-                @media screen and (max-width: $mobile)
-                    width: 100%
-                    padding: 20px
-                &:nth-child(2)
-                    margin-left: 40px
-                    margin-top: 20px
-                    @media screen and (max-width: $mobile)
-                        margin-left: 0
-                &:nth-child(3)
-                    margin-left: 40px
-                    margin-top: 40px
-                    @media screen and (max-width: $mobile)
-                        margin-left: 0
-                        margin-top: 20px
-                & .header
-                    display: flex
-                    margin-bottom: 20px
-                    & img
-                        border-radius: 50%
-                        height: 50px
-                        margin-right: 20px
-                    & h2
-                        font-size: 12px
-                        color: hsla(300, 24%, 96%,.75)
-                        font-weight: 700
-                        & span
-                            color: hsla(333, 80%, 67%, .5)
-                            line-height: 22px
-                & p
-                    color: hsla(0, 0%, 100%, .8)
-                    font-weight: 500
-                    font-size: 13px
-                    line-height: 22px
+            margin-top: 15px
+  .cards
+    display: grid
+    grid-template: 1fr / repeat(3, 1fr)
+    grid-gap: 0 40px
+    @media screen and (max-width: $ipad)
+      grid-template: repeat(3, 1fr) / 1fr
+      grid-gap: 20px 0
+    .card
+      background-color: #511f50
+      border-radius: 8px
+      padding: 35px 30px
+      &:nth-child(1)
+        margin-bottom: 40px
+        @media screen and (max-width: $ipad)
+          margin: 0
+      &:nth-child(2)
+        margin: 20px 0
+        @media screen and (max-width: $ipad)
+          margin: 0
+      &:nth-child(3)
+        margin-top: 40px
+        @media screen and (max-width: $ipad)
+          margin: 0
+      .card__person
+        display: flex
+        align-items: center
+        margin-bottom: 25px
+        > img
+          width: 50px
+          height: 50px
+          border-radius: 50%
+          margin-right: 15px
+        > h3
+          color: #f5e4f4
+          font-size: 16px
+          font-weight: 600
+          > span
+            color: #ad699c
+            font-weight: 400
+            font-size: 14px
+      > p
+        line-height: 24px
+        color: #ffe6ff
 </style>

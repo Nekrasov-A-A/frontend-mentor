@@ -11,36 +11,25 @@ The designs were created to the following widths:
 
 ### Primary
 
-#### Text
-
-- Very dark desaturated blue: hsl(238, 29%, 16%)
-- Soft red: hsl(14, 88%, 65%)
-
-#### Gradient
-
-Background gradient:
-
-- Soft violet: hsl(273, 75%, 66%)
-- Soft blue: hsl(240, 73%, 65%)
-
-### Neutral
-
-#### Text
-
-- Very dark grayish blue: hsl(237, 12%, 33%)
-- Dark grayish blue: hsl(240, 6%, 50%)
-
-#### Dividers
-
-- Light grayish blue: hsl(240, 5%, 91%)
+- Violet: hsl(257, 40%, 49%)
+- Soft Magenta: hsl(300, 69%, 71%)
 
 ## Typography
 
-### Body Copy
+### Headings
 
-- Font size: 12px
+- Family: [Poppins](https://fonts.google.com/specimen/Poppins)
+- Weights: 400, 600
 
-### Font
+### Body
 
-- Family: [Kumbh Sans](https://fonts.google.com/specimen/Kumbh+Sans)
-- Weights: 400, 700
+- Family: [Open Sans](https://fonts.google.com/specimen/Open+Sans)
+- Weights: 400
+
+## Icons
+
+For the social icons, you can use a font icon library. Some suggestions can be found below:
+
+- [Font Awesome](https://fontawesome.com/)
+- [IcoMoon](https://icomoon.io/)
+- [Ionicons](https://ionicons.com/)

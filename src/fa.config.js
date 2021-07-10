@@ -42,6 +42,8 @@ import {
   faPhoneAlt,
   faEnvelope,
   faQuoteLeft,
+  faStar,
+  faShare,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -78,7 +80,9 @@ library.add(
   faEnvelope,
   faAngleRight,
   faQuoteLeft,
-  faTwitterSquare
+  faTwitterSquare,
+  faStar,
+  faShare
 );
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);

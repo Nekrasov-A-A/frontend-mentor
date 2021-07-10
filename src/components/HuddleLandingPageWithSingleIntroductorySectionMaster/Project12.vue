@@ -1,33 +1,28 @@
 <template>
   <div class="wrapper">
-    <div class="image__box">
-      <div class="logo">
-        <img src="./images/logo.svg" alt="logo" />
+    <img src="./images/logo.svg" alt="logo" />
+    <section class="main">
+      <div class="main__image">
+        <img src="./images/illustration-mockups.svg" alt="mockups" />
       </div>
-      <div class="image">
-        <img src="./images/illustration-mockups.svg" alt="image" />
+      <div class="main__info">
+        <h1>
+          Build The Community <br />
+          Your Fans Will Love
+        </h1>
+        <p>
+          Huddle re-imagines the way we build communities. You have a voice, but
+          so does your audience. Create connections with your users as you
+          engage in genuine discussion.
+        </p>
+        <button>Register</button>
       </div>
-    </div>
-    <div class="info__box">
-      <h1>Build The Community Your Fans Will Love</h1>
-      <p>
-        Huddle re-imagines the way we build cummunities. You have a voice, but
-        so does your audience. Create connections with your users as you engage
-        in genuine discussion.
-      </p>
-      <button>Register</button>
-    </div>
-    <div class="social">
-      <div class="wrap__icon">
-        <font-awesome-icon :icon="['fab', 'facebook-f']" class="icon" />
-      </div>
-      <div class="wrap__icon">
-        <font-awesome-icon :icon="['fab', 'twitter']" class="icon" />
-      </div>
-      <div class="wrap__icon">
-        <font-awesome-icon :icon="['fab', 'instagram']" class="icon" />
-      </div>
-    </div>
+    </section>
+    <section class="social">
+      <font-awesome-icon :icon="['fab', 'facebook-f']" />
+      <font-awesome-icon :icon="['fab', 'twitter']" />
+      <font-awesome-icon :icon="['fab', 'instagram']" />
+    </section>
   </div>
 </template>
 
@@ -38,89 +33,83 @@ export default {};
 <style lang="sass" scoped>
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap')
-
-$mobile: 375px
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap')
 
 *
-    box-sizing: border-box
-    margin: 0
-    padding: 0
     font-family: 'Poppins'
 
 .wrapper
+  display: flex
+  padding: 0 5%
+  flex-wrap: wrap
+  align-items: center
+  min-height: 100vh
+  background: url('./images/bg-desktop.svg') no-repeat, hsl(257, 40%, 49%)
+  background-size: contain
+  @media screen and (min-width: 1440px)
+    background-size: cover
+  @media screen and (max-width: $ipad)
+    padding: 60px 5%
+  > img
+    @media screen and (max-width: $ipad)
+      margin-bottom: 100px
+  .main
     display: flex
-    min-height: 100vh
-    background: url('./images/bg-desktop.svg'), hsl(257, 40%, 49%)
-    padding: 5%
-    position: relative
-    @media screen and (max-width: $mobile)
-        flex-direction: column
-    & .image__box
-        display: flex
-        flex-direction: column
-        justify-content: space-between
-        & .logo
-            & img
-                width: 200px
-                @media screen and (max-width: $mobile)
-                    margin-bottom: 60px
-        & .image
-            & img
-                width: 100%
-    & .info__box
-        width: 40%
-        padding: 60px
-        display: flex
-        flex-direction: column
-        justify-content: center
+    flex-wrap: wrap
+    width: 100%
+    align-items: center
+    @media screen and (max-width: $ipad)
+      text-align: center
+    .main__image
+      width: 50%
+      @media screen and (max-width: $ipad)
+        width: 100%
         margin-bottom: 100px
-        @media screen and (max-width: $mobile)
-            width: 100%
-            text-align: center
-            padding: 0
-            align-items: center
-        & h1
-            color: rgba(255,255,255,.95)
-            font-weight: 600
-            line-height: 50px
-            margin-bottom: 20px
-            font-size: 36px
-            @media screen and (max-width: $mobile)
-                font-size: 24px
-                margin-top: 40px
-        & p
-            color: rgba(255,255,255,.85)
-            font-size: 15px
-            line-height: 24px
-            margin-bottom: 20px
-        & button
-            padding: 15px
-            width: 200px
-            border-radius: 50px
-            border: 0
-            color: hsl(257, 40%, 49%)
-            transition: all .3s
-            &:hover
-                background-color: hsl(300, 69%, 71%)
-                color: rgba(255,255,255,.85)
-    & .social
-        display: flex
-        position: absolute
-        bottom: 5%
-        right: 10%
-        @media screen and (max-width: $mobile)
-            right: 28%
-        & .wrap__icon
-            padding: 6px 8px
-            border: 1px solid #fff
-            border-radius: 50%
-            margin-left: 10px
-            &:hover
-                border: 1px solid hsl(300, 69%, 71%)
-                & .icon
-                    color: hsl(300, 69%, 71%)
-            & .icon
-                width: 25px
-                height: 25px
-                color: #fff
+      > img
+        width: 100%
+    .main__info
+      width: 50%
+      padding-left: 60px
+      @media screen and (max-width: $ipad)
+        width: 100%
+        padding-left: 0
+        margin-bottom: 100px
+      > h1
+        color: #fffeff
+        line-height: 48px
+        margin-bottom: 15px
+      > p
+        font-family: 'Open Sans'
+        line-height: 24px
+        color: #fff5ff
+        margin-bottom: 20px
+      > button
+        padding: 20px 60px
+        background-color: #ffffff
+        color: #6451ab
+        border-radius: 50px
+        &:hover
+          background-color: #e980e7
+          color: #ffffff
+  .social
+    width: 100%
+    display: flex
+    align-items: center
+    justify-content: flex-end
+    @media screen and (max-width: $ipad)
+      justify-content: center
+    > *
+      width: 40px
+      height: 40px
+      padding: 8px
+      border: 1px solid #fff
+      border-radius: 50%
+      color: #fff
+      cursor: pointer
+      margin-left: 20px
+      &:first-child
+        margin-left: 0
+      &:hover
+        color: #e980e7
+        border-color: #e980e7
 </style>

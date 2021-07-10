@@ -69,7 +69,7 @@ export default {
 
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap')
 
-$mobile: 375px
+
 
 .wrapper
     display: flex
@@ -82,40 +82,51 @@ $mobile: 375px
         display: flex
         width: 100%
         position: relative
-        @media screen and (max-width: $mobile)
+        @media screen and (max-width: $ipad)
             flex-direction: column
             text-align: center
         & .image
-            background-image: url('./images/hero-desktop.jpg')
+            background: url('./images/hero-desktop.jpg') no-repeat
+            background-size: cover
             height: 100vh
-            width: 95%
-            @media screen and (max-width: $mobile)
-                background-image: url('./images/hero-mobile.jpg')
-                background-repeat: no-repeat
+            width: 40%
+            @media screen and (max-width: $ipad)
+                background: url('./images/hero-mobile.jpg') no-repeat
+                background-size: 100% 100%
                 width: 100%
-                height: 250px
+                min-height: 300px
+                max-height: 500px
+            @media screen and (max-width: $mobile)
+                max-height: 300px
+
         & .logo
             position: absolute
             top: 13%
             left: 15%
-            @media screen and (max-width: $mobile)
+
+            @media screen and (max-width: $ipad)
                 position: static
                 padding: 10% 5%
                 align-self: start
         & .info
             display: flex
             flex-direction: column
-            background: url('./images/bg-pattern-desktop.svg'),  linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%))
+            background: url('./images/bg-pattern-desktop.svg') no-repeat,  linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%))
+            background-size: cover
             padding: 15% 15% 5%
-            @media screen and (max-width: $mobile)
-                order: 2
-                padding: 20% 5%
+            width: 60%
+            @media screen and (max-width: $ipad-pro)
+              justify-content: center
 
+            @media screen and (max-width: $ipad)
+                order: 2
+                width: 100%
+                padding: 50px 10%
             & h1
                 font-size: 64px
                 letter-spacing: 8px
                 color: hsl(0, 6%, 24%)
-                margin: 0
+                margin-bottom: 20px
                 line-height: 64px
                 & span
                     font-weight: 300
@@ -123,18 +134,24 @@ $mobile: 375px
             & p
                  color: hsl(0, 36%, 70%)
                  line-height: 26px
+                 margin-bottom: 20px
                  &:nth-child(4)
                     color: hsl(0, 93%, 68%)
+                    margin-bottom: 0
+                    margin-left: 20px
+                    @media screen and (max-width: $ipad)
+                      text-align: left
             & form
                 position: relative
                 display: flex
                 margin-top: 20px
+
                 & > img
                     width: 30px
                     height: 30px
                     position: absolute
                     top: 20%
-                    right: 25%
+                    right: 120px
                 & > button
                     padding: 16px 45px
                     border-radius: 50px

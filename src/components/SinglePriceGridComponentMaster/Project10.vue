@@ -40,7 +40,7 @@ export default {};
 
 @import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap')
 
-$mobile: 375px
+
 
 *
     box-sizing: border-box
@@ -57,7 +57,9 @@ $mobile: 375px
         width: 40%
         display: flex
         flex-wrap: wrap
-        @media screen and (max-width: $mobile)
+        @media screen and (max-width: $ipad-pro)
+          width: 60%
+        @media screen and (max-width: $ipad)
             width: 100%
             margin: 20% 5%
         & .info
@@ -82,7 +84,7 @@ $mobile: 375px
             background-color: hsl(179, 62%, 43%)
             color: white
             width: 50%
-            @media screen and (max-width: $mobile)
+            @media screen and (max-width: $ipad)
                 width: 100%
             & p
                 font-size: 14px
@@ -114,7 +116,7 @@ $mobile: 375px
             background-image: linear-gradient(90deg, hsla(179, 62%, 43%,.75), hsl(179, 62%, 43%))
             padding: 40px
             width: 50%
-            @media screen and (max-width: $mobile)
+            @media screen and (max-width: $ipad)
                 width: 100%
             & h1
                 color: rgba(255,255,255,.8)

@@ -114,7 +114,7 @@ export default {
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap')
 
-$mobile: 375px
+
 
 *
     box-sizing: border-box
@@ -130,13 +130,13 @@ $mobile: 375px
         display: flex
         justify-content: space-between
         align-items: center
-        @media screen and (max-width: $mobile)
+        @media screen and (max-width: $ipad)
             flex-direction: column
             margin: 20% 5%
             text-align: center
         & .box__info
             width: 40%
-            @media screen and (max-width: $mobile)
+            @media screen and (max-width: $ipad)
                 width: 100%
                 margin-bottom: 40px
 
@@ -149,7 +149,7 @@ $mobile: 375px
                 line-height: 26px
         & .box__form
             width: 50%
-            @media screen and (max-width: $mobile)
+            @media screen and (max-width: $ipad)
                 width: 100%
             & .item
                 color: hsl(255, 100%, 100%)
@@ -166,7 +166,7 @@ $mobile: 375px
                 background-color: #fff
                 border-radius: 8px
                 padding: 40px
-                @media screen and (max-width: $mobile)
+                @media screen and (max-width: $ipad)
                     padding: 20px
                 & span
                     display: block
@@ -199,6 +199,7 @@ $mobile: 375px
                     font-size: 12px
                     line-height: 10px
                     text-align: right
+                    margin-top: 5px
                 & button
                     width: 100%
                     background-color: hsl(154, 59%, 51%)

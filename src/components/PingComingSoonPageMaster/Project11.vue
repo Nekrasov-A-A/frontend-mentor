@@ -65,7 +65,7 @@ export default {
 
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap')
 
-$mobile: 375px
+
 
 *
     box-sizing: border-box
@@ -79,6 +79,11 @@ $mobile: 375px
     justify-content: center
     min-height: 100vh
     text-align: center
+    @media screen and (max-width: $ipad-pro)
+      margin: 0 15%
+    @media screen and (max-width: $ipad)
+      margin: 0 15%
+      padding: 60px 0
     @media screen and (max-width: $mobile)
       margin: 10% 10%
     & .header
@@ -92,6 +97,7 @@ $mobile: 375px
             font-weight: 300
             margin: 0
             letter-spacing: 1px
+            margin-bottom: 15px
             @media screen and (max-width: $mobile)
               font-size: 1.3em
             & span
@@ -134,7 +140,7 @@ $mobile: 375px
                 margin: 0
                 font-size: 12px
                 position: absolute
-                left: 13.5%
+                left: 25px
                 top: 110%
                 @media screen and (max-width: $mobile)
                   position: static
@@ -169,7 +175,7 @@ $mobile: 375px
             color: hsl(0, 0%, 59%)
     & .social
         display: flex
-        margin-bottom: 10px
+        margin-bottom: 20px
         & .wrap__icon
           padding: 3px 4px
           border: 1px solid hsla(223, 87%, 63%,.3)
