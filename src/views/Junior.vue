@@ -5,6 +5,7 @@
       :key="index"
       :to="`/junior/${card.projectName}`"
       class="link"
+      :target="getTargetValue"
     >
       <div class="card">
         <div
@@ -26,7 +27,7 @@
 import { mapGetters } from "vuex";
 export default {
   computed: {
-    ...mapGetters(["getJuniorCards"]),
+    ...mapGetters(["getJuniorCards", "getTargetValue"]),
   },
   methods: {
     projectNameView: function(projectName) {
