@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    Here nav. Soon...
     <router-view />
   </div>
 </template>
