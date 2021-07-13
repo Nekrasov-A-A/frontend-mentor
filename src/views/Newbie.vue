@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
-    <Project1 />
     <Project2 />
+    <Project1 />
     <Project3 />
     <Project4 />
     <Project5 />

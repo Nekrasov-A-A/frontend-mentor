@@ -3,7 +3,7 @@
     <div class="menu">
       <nav v-if="isOpen">
         <span class="circle"></span>
-        <router-link to="/newbie" class="menu__link">
+        <router-link to="/" class="menu__link">
           <button>
             Newbie
             <span></span>
@@ -60,7 +60,7 @@ import "normalize.css";
 import { mapActions } from "vuex";
 export default {
   data: () => ({
-    isOpen: false,
+    isOpen: true,
     isOpenSettings: false,
     valueOfTarget: "_self",
   }),
