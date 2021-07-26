@@ -2,7 +2,7 @@
   <div id="app">
     <div class="menu">
       <nav v-if="isOpen">
-        <span class="circle"></span>
+        <img src="./assets/first-try5.svg" />
         <router-link to="/" class="menu__link">
           <button>
             Newbie
@@ -91,12 +91,19 @@ export default {
     display: flex
     align-items: center
     justify-content: space-between
-    box-shadow: 1.5px 0px 8px 1px rgba(182,252,213,.5)
-    border-radius:  0 50px 50px 0
-    padding: 0 20px
+    border-radius: 0 50px 50px 0
     position: relative
-    background-color: #fff
-    margin-left: 12px
+    padding: 0 20px
+    > img
+      position: absolute
+      min-height: 40px
+      height: 42px
+      width: 100%
+      left: 0
+      top: -1px
+      z-index: -1
+      @media screen and (max-width: $mobile)
+        display: none
     @media screen and (max-width: $mobile)
       width: 100%
       border-radius: 8px
@@ -105,6 +112,7 @@ export default {
       height: 100%
       box-shadow: 0 0 8px rgba(0,0,0,.1)
       justify-content: center
+      background-color: rgba( 255, 255, 255, 0.9 )
     .menu__tools
       display: flex
       align-items: center
@@ -122,29 +130,6 @@ export default {
           display: none
           &:checked + p
             opacity: 1
-    .circle
-      display: block
-      width: 11px
-      height: 40px
-      overflow: hidden
-      position: absolute
-      background: transparent
-      left: -11px
-      @media screen and (max-width: $mobile)
-        display: none
-      &::after
-        content: ''
-        width: 100px
-        height: 40px
-        -moz-border-radius: 100px
-        -webkit-border-radius: 100px
-        border-radius: 80px
-        background: transparent
-        position: absolute
-        top: -40px
-        left: -130px
-        border: 40px solid #fff
-        filter: drop-shadow(-1px 0px .1px rgba(182,252,213,.7))
     .menu__icon
       margin-left: 10px
       width: 20px
