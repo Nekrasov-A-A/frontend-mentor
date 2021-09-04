@@ -4,7 +4,7 @@
       <nav v-if="isOpen">
         <img src="./assets/first-try5.svg" />
         <router-link to="/" class="menu__link">
-          <button>
+          <button :class="{ active: $route.path === '/' }">
             Newbie
             <span></span>
             <span></span>
@@ -13,7 +13,11 @@
           </button>
         </router-link>
         <router-link to="/junior" class="menu__link">
-          <button>
+          <button
+            :class="{
+              active: $route.path.includes('/junior'),
+            }"
+          >
             Junior
             <span></span>
             <span></span>
@@ -64,7 +68,9 @@ export default {
     isOpenSettings: false,
     valueOfTarget: "_self",
   }),
-  methods: { ...mapActions(["chooseTargetValue"]) },
+  methods: {
+    ...mapActions(["chooseTargetValue"]),
+  },
 };
 </script>
 
@@ -163,6 +169,8 @@ export default {
         opacity: 0.3
         font-family: 'Open Sans'
         letter-spacing: .5px
+        &.active
+          opacity: 1
         &:active
           transform: scale(0.98)
         &:hover
@@ -287,6 +295,7 @@ export default {
     transition: all .3s
     z-index: 98
     background: hsla(60,23%,91%,.4)
+
     @media screen and (max-width: $mobile)
       position: absolute
       top: 10px
